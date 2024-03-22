@@ -11,6 +11,6 @@ export const routes: Routes = [
   {path: 'maininter',component: MaininterComponent},
   {path: 'singlecase',component: SinglecaseComponent},
   {path: 'pending',component: PendingComponent},
-  {path: '',component:RegisterComponent},
-  {path:'login',component:LoginComponent},
+  {path: 'register',component:RegisterComponent},
+  {path:'',component:LoginComponent},
 ];
