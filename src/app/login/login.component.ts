@@ -3,11 +3,12 @@ import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -45,11 +46,13 @@ export class LoginComponent {
   errorMessage: string | null=null;
   onSubmit(): void{
     const rawForm=this.form.getRawValue()
-    this.authService.login(rawForm.email,rawForm.password).subscribe({ next:()=>{
+    this.authService.login(rawForm.email,rawForm.password)
+    .subscribe({ next:()=>{
       this.router.navigateByUrl('/home');
     },
     error: (err)=>{
       this.errorMessage=err.code;
     },
     });
-  }}
+  }
+}

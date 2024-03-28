@@ -3,11 +3,12 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -44,7 +45,7 @@ export class RegisterComponent {
   });
   errorMessage: string | null=null;
   onSubmit(): void{
-    const rawForm=this.form.getRawValue()
+    const rawForm=this.form.getRawValue();
     this.authService.register(rawForm.email,rawForm.username,rawForm.password).subscribe({ next:()=>{
       this.router.navigateByUrl('/home');
     },

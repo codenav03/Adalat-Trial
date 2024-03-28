@@ -20,8 +20,9 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent /*implements OnInit*/{
- /* authService =inject(AuthService)
+export class AppComponent implements OnInit{
+
+  authService =inject(AuthService);
   ngOnInit(): void {
       this.authService.user$.subscribe(user =>{
         if(user){
@@ -33,7 +34,8 @@ export class AppComponent /*implements OnInit*/{
           this.authService.currentUserSig.set(null);
         }
         console.log(this.authService.currentUserSig());
-      })
-  }*/
+      });
+  }
+ 
   title = 'courtfront';
 }

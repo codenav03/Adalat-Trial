@@ -1,6 +1,6 @@
 import { Injectable, inject, signal } from "@angular/core";
 import { Auth, user } from "@angular/fire/auth";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { Observable, from } from "rxjs";
 import { UserInterface } from "./user.interface";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
@@ -38,6 +38,7 @@ export class AuthService{
     })
   }
 }*/
+private isAuthenticated: boolean = false;
   firebaseAuth=inject(Auth);
   user$=user(this.firebaseAuth);
   currentUserSig= signal<UserInterface | null | undefined>(undefined);
@@ -59,12 +60,23 @@ export class AuthService{
     email: string,
     password: string,
   ): Observable<void>{
-    const promise= createUserWithEmailAndPassword(
+    const promise= signInWithEmailAndPassword(
       this.firebaseAuth,
       email,
       password,
-    ).then(()=>{});
+    ).then(()=>{this.isAuthenticated = true;});
+
     return from(promise);
+
+  }
+  logout(): Observable<void>{
+    const promise =signOut(this.firebaseAuth);
+    this.isAuthenticated = false;
+    return from(promise);
+
+  }
+  isLoggedIn(): boolean {
+    return this.isAuthenticated;
   }
 }
 
