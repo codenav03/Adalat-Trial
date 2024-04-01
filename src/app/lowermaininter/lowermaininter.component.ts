@@ -1,19 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
-import { ClistService } from '../core/services/clist.service';
-import { Icasel } from '../core/models/common.model';
-import { NavbarComponent } from "../units/navbar/navbar.component";
 import { LowernavComponent } from '../lowernav/lowernav.component';
+import { Icasel } from '../core/models/common.model';
+import { ClistService } from '../core/services/clist.service';
 
 @Component({
-    selector: 'app-maininter',
-    standalone: true,
-    templateUrl: './maininter.component.html',
-    styleUrl: './maininter.component.css',
-    imports: [RouterLink, RouterModule, CommonModule, NavbarComponent]
+  selector: 'app-lowermaininter',
+  standalone: true,
+  imports: [RouterLink,RouterModule,CommonModule,LowernavComponent],
+  templateUrl: './lowermaininter.component.html',
+  styleUrl: './lowermaininter.component.css'
 })
-export class MaininterComponent implements OnInit {
+export class lowermaininter implements OnInit {
   clists: Icasel[]=[];
   constructor(private clistsService: ClistService){
 

@@ -12,11 +12,16 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { FormsModule } from '@angular/forms';
+import { LowernavComponent } from './lowernav/lowernav.component';
+import { LowerhomeComponent } from './lowerhome/lowerhome.component';
+import { LowerchartComponent } from './lowerchart/lowerchart.component';
+import { LowerpendingComponent } from './lowerpending/lowerpending.component';
+import { lowermaininter } from './lowermaininter/lowermaininter.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,MaininterComponent,NavbarComponent,SinglecaseComponent,CommonModule,PendingComponent,ChartComponent,HomeComponent,RegisterComponent,LoginComponent,AngularFireModule,FormsModule],
+  imports: [RouterOutlet,MaininterComponent,NavbarComponent,SinglecaseComponent,CommonModule,PendingComponent,ChartComponent,HomeComponent,RegisterComponent,LoginComponent,AngularFireModule,FormsModule,LowernavComponent,LowerhomeComponent,LowerchartComponent,LowerpendingComponent,lowermaininter],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
