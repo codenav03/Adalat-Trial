@@ -5,6 +5,7 @@ import { PendingComponent } from './pending/pending.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { CaseformComponent } from './caseform/caseform.component';
 
 export const routes: Routes = [
   {path: 'home',component: HomeComponent},
@@ -12,5 +13,6 @@ export const routes: Routes = [
   {path: 'singlecase',component: SinglecaseComponent},
   {path: 'pending',component: PendingComponent},
   {path: 'register',component:RegisterComponent},
+  {path: 'caseform', component:CaseformComponent},
   {path:'',component:LoginComponent},
 ];
