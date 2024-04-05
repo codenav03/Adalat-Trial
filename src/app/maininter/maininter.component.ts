@@ -4,13 +4,14 @@ import { RouterLink, RouterModule } from '@angular/router';
 import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { NavbarComponent } from "../units/navbar/navbar.component";
+import { SearchPipe } from '../search.pipe';
 
 @Component({
     selector: 'app-maininter',
     standalone: true,
     templateUrl: './maininter.component.html',
     styleUrl: './maininter.component.css',
-    imports: [RouterLink, RouterModule, CommonModule, NavbarComponent]
+    imports: [RouterLink, RouterModule, CommonModule, NavbarComponent,SearchPipe]
 })
 export class MaininterComponent implements OnInit {
   clists: Icasel[]=[];
@@ -34,5 +35,5 @@ getAllCases(){
   })
   },});
 }
-searchText="";
+searchText=" ";
 }
