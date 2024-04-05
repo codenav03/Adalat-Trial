@@ -13,6 +13,8 @@ import { AuthService } from './auth.service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { FormsModule } from '@angular/forms';
 
+import { Icasel } from './core/models/common.model';
+import { ClistService } from './core/services/clist.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -36,6 +38,7 @@ export class AppComponent implements OnInit{
         console.log(this.authService.currentUserSig());
       });
   }
- 
+
   title = 'courtfront';
+
 }

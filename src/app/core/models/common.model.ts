@@ -4,4 +4,5 @@ export interface Icasel
   cno: string;
   assign:string;
   comp: string;
+  dmail_id:string;
 }
