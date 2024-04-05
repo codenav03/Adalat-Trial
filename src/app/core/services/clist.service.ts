@@ -7,7 +7,7 @@ import { Icasel } from '../models/common.model';
 })
 export class ClistService {
 
-  private dbPath = '/expenses';
+  private dbPath = '/cases';
   caseRef: AngularFireList<any>;
   constructor(private db: AngularFireDatabase){
     this.caseRef = db.list(this.dbPath);
@@ -24,11 +24,11 @@ addCase(expense: Icasel){
   this.caseRef.push(expense);
 }
 
-updateExpense(key: string, expense: Icasel){
+updateCase(key: string, expense: Icasel){
   this.caseRef.push(expense);
 }
 
-deleteExpense(key: string){
+deleteCase(key: string){
   this.caseRef.remove(key);
 }
 

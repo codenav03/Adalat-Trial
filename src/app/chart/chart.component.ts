@@ -41,7 +41,7 @@ export class ChartComponent implements data  {
 		animationEnabled: true,
 		theme: "light3",
 		title: {
-			text: "Pending Vs Un Assigned Cases"
+			text: "Pending Vs Unassigned Cases"
 		},
 		subtitles: [{
 			text: "Click on Any Segment to Drilldown",
@@ -67,7 +67,7 @@ export class ChartComponent implements data  {
 			indexLabelFontColor: "white",
 			dataPoints: [
 				{ y: 551160, name: "Pending Cases", color: "grey", indexLabel: "62.56%" },
-				{ y: 329840, name: "Un Assigned Cases", color: "black", indexLabel: "37.44%" }
+				{ y: 329840, name: "Unassigned Cases", color: "black", indexLabel: "37.44%" }
 			]
 		}],
 		"Pending Cases": [{
@@ -89,9 +89,9 @@ export class ChartComponent implements data  {
 				{ label: "Dec", y: 54400 }
 			]
 		}],
-		"Un Assigned Cases": [{
+		"Unassigned Cases": [{
 			color: "grey",
-			name: "Un Assigned Cases",
+			name: "Unassigned Cases",
 			type: "column",
 			dataPoints: [
 				{ label: "Jan", y: 21800 },

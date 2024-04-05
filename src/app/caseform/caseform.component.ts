@@ -16,7 +16,7 @@ export class CaseformComponent {
   [x: string]: any;
   cases: Icasel[]= [];
   caseForm !: FormGroup;
-  expenseId = '';
+  CaseId = '';
 
   constructor(
     private fb: FormBuilder,
@@ -25,17 +25,19 @@ export class CaseformComponent {
      private activatedRoute: ActivatedRoute
      ) {
     this.caseForm = this.fb.group({
-      price: new FormControl("",[Validators.required]),
+      Case_no: new FormControl("",[Validators.required]),
       title: new FormControl("",[Validators.required]),
-      description: new FormControl(""),
+      description: new FormControl("",[Validators.required]),
+      assign: "NO",
+      comp: "NO",
     });
   }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe({
       next:(params) => {
-        this.expenseId = params['id'];
-        this.getExpense(this.expenseId);
+        this.CaseId = params['id'];
+        this.getCase(this.CaseId);
       },
     });
   }
@@ -44,9 +46,9 @@ export class CaseformComponent {
 
   OnSubmit(){
     if(this.caseForm.valid){
-      if(this.expenseId != ''){
-        this.ClistService.updateExpense(
-          this.expenseId,
+      if(this.CaseId != ''){
+        this.ClistService.updateCase(
+          this.CaseId,
           this.caseForm.value
         );
       }
@@ -60,7 +62,7 @@ export class CaseformComponent {
     }
   }
 
-  getExpense(key: string){
+  getCase(key: string){
     this.ClistService.getCase(key).snapshotChanges().subscribe({
       next: (data) => {
         let expense = data.payload.toJSON() as Icasel;
