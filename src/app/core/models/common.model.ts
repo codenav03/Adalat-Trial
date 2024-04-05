@@ -1,7 +1,7 @@
 export interface Icasel
 {
   key?: string;
-  cno: string;
+  Case_no: string;
   assign:string;
   comp: string;
 }

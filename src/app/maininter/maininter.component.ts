@@ -29,7 +29,7 @@ getAllCases(){
     let clist=item.payload.toJSON() as Icasel
     this.clists.push({
       key: item.key || '',
-      cno: clist.cno,
+      Case_no: clist.Case_no,
       assign: clist.assign,
       comp: clist.comp,
     });
