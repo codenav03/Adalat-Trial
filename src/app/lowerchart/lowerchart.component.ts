@@ -41,7 +41,7 @@ text: "Pending Vs Completed Cases"
 },
 subtitles: [{
 text: "Click on Any Segment to Drilldown",
-backgroundColor: "#2eacd1",
+backgroundColor:"black",
 fontSize: 16,
 fontColor: "white",
 padding: 5

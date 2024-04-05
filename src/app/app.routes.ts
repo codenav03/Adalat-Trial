@@ -22,5 +22,5 @@ export const routes: Routes = [
   {path:'lowercaselist',component:LowercaselistComponent},
   {path: 'lowerpending',component: LowerpendingComponent},
   {path: 'lowermaininter',component: lowermaininter},
-  {path:'',component:LoginComponent}
+  {path:'',component:LowerhomeComponent},
 ];

@@ -9,13 +9,13 @@
   }
   .card {
     flex: 1 1 calc(50% - 20px); /* Adjust the width as needed */
-    margin-top: 100px;
+    margin-top: 50px;
     height: 550px;
     width: 100%;
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    background-color: #f8f9fa; /* Light gray background */
+    background-color: #c8ccd0; /* Light gray background */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft*/
   }
@@ -23,26 +23,26 @@
   
   .card-title {
     margin-top: 0px;
-    color: #333; /* Dark text color for titles */
+    color: #020000; /* Dark text color for titles */
     font-size: 1.2rem; /* Larger font size for titles */
     margin-bottom: 10px; /* Space below the title */
     text-align: center;
-    background-color: #007bff; /* Blue background color */
+    background-color: #0f0e0e; /* Blue background color */
     color: #fff; /* White text color */
     padding: 5px 10px; /* Add some padding around the text */
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 500px; /* Rounded corners */
     display: inline-block; /* Make the title behave like a block element */
-    background-color: #4d5156; /* Blue background color */
+    background-color: #0c0d0d; /* Blue background color */
     color: #fff; /* White text color */
    /* Add some padding around the text */
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 5px; /* Rounded corners */
     margin-bottom: 0; /* Remove margin at the bottom */
     width: calc(100% - 20px); /* Calculate width to fill the entire width of the card */
     margin-bottom: 50px;
   }
   
   .card-text {
-    color: #666; /* Slightly darker text color for body text */
+    color: #0f0f0f; /* Slightly darker text color for body text */
     font-size: 1rem; /* Normal font size */
   }
   
@@ -64,7 +64,7 @@
     transition: background-color 0.3s; /* Smooth background color transition */
   }
   .btn1{
-    background-color: #198754; /* Blue button background color */
+    background-color: #181818; /* Blue button background color */
     color: #fff; /* White button text color */
     border: none; /* Remove button border */
     padding: 10px 20px; /* Add padding inside the button */
@@ -77,11 +77,11 @@
   }
   .btn{
     float: right;
-    background-color: rgb(145, 140, 140);
+    background-color: rgb(135, 24, 24);
     color: white;
   }
   .list-group-item{
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(8, 8, 8);
     color: white;
   }
   
