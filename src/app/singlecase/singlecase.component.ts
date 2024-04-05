@@ -4,15 +4,18 @@ import { NavbarComponent } from "../units/navbar/navbar.component";
 import { Icasel } from '../core/models/common.model';
 import { ClistService } from '../core/services/clist.service';
 import emailjs from '@emailjs/browser';
+import { CommonModule } from '@angular/common';
 @Component({
     selector: 'app-singlecase',
     standalone: true,
     templateUrl: './singlecase.component.html',
     styleUrl: './singlecase.component.css',
-    imports: [RouterLink, NavbarComponent]
+    imports: [RouterLink, NavbarComponent,CommonModule]
 })
 export class SinglecaseComponent {
   clists: Icasel[]=[];
+  dmail_id: string = ''; // Initialize dmail_id property to hold the email ID
+
   constructor(private clistsService: ClistService){
 
   }

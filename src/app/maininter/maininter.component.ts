@@ -32,6 +32,7 @@ getAllCases(){
       cno: clist.cno,
       assign: clist.assign,
       comp: clist.comp,
+      dmail_id:clist.dmail_id
     });
   })
   },});
