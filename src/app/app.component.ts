@@ -12,11 +12,12 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { FormsModule } from '@angular/forms';
+import { SearchPipe } from './search.pipe';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,MaininterComponent,NavbarComponent,SinglecaseComponent,CommonModule,PendingComponent,ChartComponent,HomeComponent,RegisterComponent,LoginComponent,AngularFireModule,FormsModule],
+  imports: [RouterOutlet,MaininterComponent,NavbarComponent,SinglecaseComponent,CommonModule,PendingComponent,ChartComponent,HomeComponent,RegisterComponent,LoginComponent,AngularFireModule,FormsModule,SearchPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
