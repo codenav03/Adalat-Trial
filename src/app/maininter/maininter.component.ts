@@ -36,5 +36,5 @@ getAllCases(){
   })
   },});
 }
-searchText="";
+searchText='';
 }
