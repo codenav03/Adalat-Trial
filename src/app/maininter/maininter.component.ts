@@ -5,6 +5,7 @@ import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { NavbarComponent } from "../units/navbar/navbar.component";
 import { FormsModule } from '@angular/forms';
+import { SearchPipe } from '../search.pipe';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { FormsModule } from '@angular/forms';
     standalone: true,
     templateUrl: './maininter.component.html',
     styleUrl: './maininter.component.css',
-    imports: [RouterLink, RouterModule, CommonModule, NavbarComponent,FormsModule]
+    imports: [RouterLink, RouterModule, CommonModule, NavbarComponent,FormsModule,SearchPipe]
 })
 export class MaininterComponent implements OnInit {
   clists: Icasel[]=[];
