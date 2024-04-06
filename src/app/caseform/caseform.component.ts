@@ -3,8 +3,9 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CaseService } from '../units/navbar/servicess/case.service'; // Correct path to CaseService
+//import { CaseService } from '../units/navbar/servicess/case.service'; // Correct path to CaseService
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-caseform',
@@ -12,7 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./caseform.component.css'],
 
   standalone: true,
-  imports: [ ReactiveFormsModule]
+  imports: [ ReactiveFormsModule,CommonModule]
 })
 export class CaseformComponent implements OnInit {
   cases: Icasel[] = [];
@@ -24,7 +25,7 @@ export class CaseformComponent implements OnInit {
     private ClistService: ClistService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private caseService: CaseService // Inject CaseService
+  
   ) {
     this.caseForm = this.fb.group({
       Case_no: new FormControl("", [Validators.required]),
@@ -53,7 +54,6 @@ export class CaseformComponent implements OnInit {
         );
       } else {
         this.ClistService.addCase(this.caseForm.value);
-        this.caseService.incrementTotalCases(); // Increment total cases when adding a new case
       }
       this.router.navigate(['../maininter']);
     } else {

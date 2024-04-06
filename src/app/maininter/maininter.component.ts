@@ -6,7 +6,7 @@ import { Icasel } from '../core/models/common.model';
 import { NavbarComponent } from "../units/navbar/navbar.component";
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from '../search.pipe';
-import { CaseService } from '../units/navbar/servicess/case.service';
+
 
 
 @Component({
@@ -18,13 +18,21 @@ import { CaseService } from '../units/navbar/servicess/case.service';
 })
 export class MaininterComponent implements OnInit {
   clists: Icasel[]=[];
-caseService: any;
+
   constructor(private clistsService: ClistService){
 
   }
+  totalCases: number = 0; // Define a property to hold the total cases count
+
+
   ngOnInit(): void {
-      this.getAllCases();
+    // Call getTotalCases method when the component initializes
+    this.getAllCases();
+    this.getTotalCases();
+
   }
+
+  
 getAllCases(){
   this.clistsService.getAllCases().snapshotChanges().subscribe({next: (data)=>{
     this.clists=[];
@@ -37,10 +45,13 @@ getAllCases(){
       comp: clist.comp,
     });
   })
+  this.totalCases += data.length;
   },});
+  
 }
 
 getTotalCases(){
+  return this.totalCases;
   
 }
 
