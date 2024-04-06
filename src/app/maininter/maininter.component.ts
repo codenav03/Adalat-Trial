@@ -6,6 +6,7 @@ import { Icasel } from '../core/models/common.model';
 import { NavbarComponent } from "../units/navbar/navbar.component";
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from '../search.pipe';
+import { CaseService } from '../units/navbar/servicess/case.service';
 
 
 @Component({
@@ -17,6 +18,7 @@ import { SearchPipe } from '../search.pipe';
 })
 export class MaininterComponent implements OnInit {
   clists: Icasel[]=[];
+caseService: any;
   constructor(private clistsService: ClistService){
 
   }
@@ -37,5 +39,10 @@ getAllCases(){
   })
   },});
 }
+
+getTotalCases(){
+  
+}
+
 searchText='';
 }

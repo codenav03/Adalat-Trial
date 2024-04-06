@@ -1,33 +1,35 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CaseService } from '../units/navbar/servicess/case.service'; // Correct path to CaseService
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-caseform',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './caseform.component.html',
-  styleUrl: './caseform.component.css'
+  styleUrls: ['./caseform.component.css'],
+
+  standalone: true,
+  imports: [ ReactiveFormsModule]
 })
-export class CaseformComponent {
-  [x: string]: any;
-  cases: Icasel[]= [];
+export class CaseformComponent implements OnInit {
+  cases: Icasel[] = [];
   caseForm !: FormGroup;
   CaseId = '';
 
   constructor(
     private fb: FormBuilder,
-     private ClistService: ClistService, 
-     private router: Router,
-     private activatedRoute: ActivatedRoute
-     ) {
+    private ClistService: ClistService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private caseService: CaseService // Inject CaseService
+  ) {
     this.caseForm = this.fb.group({
-      Case_no: new FormControl("",[Validators.required]),
-      title: new FormControl("",[Validators.required]),
-      description: new FormControl("",[Validators.required]),
+      Case_no: new FormControl("", [Validators.required]),
+      title: new FormControl("", [Validators.required]),
+      description: new FormControl("", [Validators.required]),
       assign: "NO",
       comp: "NO",
     });
@@ -35,34 +37,31 @@ export class CaseformComponent {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe({
-      next:(params) => {
+      next: (params) => {
         this.CaseId = params['id'];
         this.getCase(this.CaseId);
       },
     });
   }
 
-  
-
-  OnSubmit(){
-    if(this.caseForm.valid){
-      if(this.CaseId != ''){
+  OnSubmit() {
+    if (this.caseForm.valid) {
+      if (this.CaseId !== '') {
         this.ClistService.updateCase(
           this.CaseId,
           this.caseForm.value
         );
-      }
-      else{
-      this.ClistService.addCase(this.caseForm.value);
+      } else {
+        this.ClistService.addCase(this.caseForm.value);
+        this.caseService.incrementTotalCases(); // Increment total cases when adding a new case
       }
       this.router.navigate(['../maininter']);
-    }
-    else{
+    } else {
       this.caseForm.markAllAsTouched();
     }
   }
 
-  getCase(key: string){
+  getCase(key: string) {
     this.ClistService.getCase(key).snapshotChanges().subscribe({
       next: (data) => {
         let expense = data.payload.toJSON() as Icasel;
