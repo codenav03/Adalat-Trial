@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { NavbarComponent } from "../units/navbar/navbar.component";
 import { FileuploadComponent } from '../dataTransfer/fileupload/fileupload.component';
 
@@ -16,9 +16,9 @@ import { Icasel } from '../core/models/common.model';
     imports: [RouterLink, NavbarComponent,FileuploadComponent,CommonModule]
 })
 export class SinglecaseComponent {
-    clists: Icasel[]=[];
+   /* clists: Icasel[]=[];
     constructor(private clistsService: ClistService){
-  
+
     }
     ngOnInit(): void {
         this.getAllCases();
@@ -36,5 +36,17 @@ export class SinglecaseComponent {
       });
     })
     },});
+  }*/
+  caseNo: string;
+
+  constructor(private route: ActivatedRoute) {
+    this.caseNo='';
+   }
+
+  ngOnInit(): void {
+    // Retrieve Case_no from route parameters
+    this.route.params.subscribe(params => {
+      this.caseNo = params['caseNo'];
+    });
   }
 }

@@ -10,7 +10,7 @@ import { CaseformComponent } from './caseform/caseform.component';
 export const routes: Routes = [
   {path: 'home',component: HomeComponent},
   {path: 'maininter',component: MaininterComponent},
-  {path: 'singlecase',component: SinglecaseComponent},
+  {path: 'singlecase/:caseNo',component: SinglecaseComponent},
   {path: 'pending',component: PendingComponent},
   {path: 'register',component:RegisterComponent},
   {path: 'caseform', component:CaseformComponent},

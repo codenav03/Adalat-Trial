@@ -6,6 +6,7 @@ import { Icasel } from '../core/models/common.model';
 import { NavbarComponent } from "../units/navbar/navbar.component";
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from '../search.pipe';
+import { SharedDataService } from '../shared-data.service';
 
 
 @Component({
@@ -34,8 +35,9 @@ getAllCases(){
       assign: clist.assign,
       comp: clist.comp,
     });
-  })
+  });
   },});
 }
 searchText='';
+
 }
