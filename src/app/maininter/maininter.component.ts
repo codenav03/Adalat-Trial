@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Router,RouterLink, RouterModule } from '@angular/router';
 import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { NavbarComponent } from "../units/navbar/navbar.component";
@@ -17,7 +17,7 @@ import { SearchPipe } from '../search.pipe';
 })
 export class MaininterComponent implements OnInit {
   clists: Icasel[]=[];
-  constructor(private clistsService: ClistService){
+  constructor(private clistsService: ClistService,private router: Router){
 
   }
   ngOnInit(): void {
@@ -37,5 +37,11 @@ getAllCases(){
   })
   },});
 }
+
+singleCase(key: string){
+  this.router.navigate(['/singlecase/'+ key])
+}
+
+
 searchText='';
 }
