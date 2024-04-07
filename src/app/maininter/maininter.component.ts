@@ -33,6 +33,8 @@ getAllCases(){
       Case_no: clist.Case_no,
       assign: clist.assign,
       comp: clist.comp,
+      description: clist.description,
+      title: clist.title,
     });
   })
   },});

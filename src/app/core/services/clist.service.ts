@@ -20,7 +20,7 @@ getAllCases(){
 }
 
 getCase(key: string){
-  return this.db.object('${this.dbPath}/${key}')
+  return this.db.object(`${this.dbPath}/${key}`)
 }
 
 addCase(expense: Icasel){
@@ -28,7 +28,7 @@ addCase(expense: Icasel){
 }
 
 updateCase(key: string, expense: Icasel){
-  this.caseRef.push(expense);
+  this.caseRef.update(key,expense);
 }
 
 deleteCase(key: string){

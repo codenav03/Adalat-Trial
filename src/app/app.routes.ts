@@ -14,5 +14,6 @@ export const routes: Routes = [
   {path: 'pending',component: PendingComponent},
   {path: 'register',component:RegisterComponent},
   {path: 'caseform', component:CaseformComponent},
+  {path: 'caseform/:id', component:CaseformComponent},
   {path:'',component:LoginComponent},
 ];

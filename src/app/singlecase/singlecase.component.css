@@ -52,6 +52,7 @@ h1{
   padding: 20px;
 }
 
+
 /* Style the download button */
 .card-body input[type="button"] {
   background-color: #198754; /* Blue button background color */
@@ -74,11 +75,7 @@ h1{
 .btn1:hover {
   background-color: black; /* Darker blue on hover */
 }
-.btn{
-  float: right;
-  background-color: rgb(145, 140, 140);
-  color: white;
-}
+
 .list-group-item{
   background-color: rgb(51, 51, 51);
   color: white;
