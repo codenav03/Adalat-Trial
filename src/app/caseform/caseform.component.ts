@@ -39,7 +39,7 @@ export class CaseformComponent {
         if(this.CaseId!=='' || params['id']!=='null' && params['id'] !== undefined){
           this.CaseId = params['id'];
           }
-        else{this.getCase(this.CaseId);}
+        this.getCase(this.CaseId);
         
         
       },
