@@ -51,6 +51,7 @@ getAllCases(){
       Case_no: clist.Case_no,
       assign: clist.assign,
       comp: clist.comp,
+      dmail_id:clist.dmail_id,
     });
   });
   console.log(this.clists);

@@ -4,4 +4,6 @@ export interface Icasel
   Case_no: string;
   assign:string;
   comp: string;
+  dmail_id: string;
+  
 }
