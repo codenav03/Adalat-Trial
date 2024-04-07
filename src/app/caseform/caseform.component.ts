@@ -36,8 +36,12 @@ export class CaseformComponent {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe({
       next:(params) => {
-        this.CaseId = params['id'];
-        this.getCase(this.CaseId);
+        if(this.CaseId!=='' || params['id']!=='null' && params['id'] !== undefined){
+          this.CaseId = params['id'];
+          }
+        else{this.getCase(this.CaseId);}
+        
+        
       },
     });
   }
@@ -54,8 +58,10 @@ export class CaseformComponent {
       }
       else{
       this.ClistService.addCase(this.caseForm.value);
+      console.log('2')
       }
       this.router.navigate(['../maininter']);
+      console.log('3')
     }
     else{
       this.caseForm.markAllAsTouched();
