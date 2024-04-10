@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { NavbarComponent } from "../units/navbar/navbar.component";
 import { FileuploadComponent } from '../dataTransfer/fileupload/fileupload.component';
-
+import emailjs from '@emailjs/browser';
 import { CommonModule } from '@angular/common';
 import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
@@ -82,3 +82,4 @@ export class SinglecaseComponent {
     
       }
 }
+
