@@ -1,10 +1,10 @@
 <app-navbar></app-navbar>
 
 
-<div class="container">
-  <ul class="list-group">
-      <li class="list-group-item"><h3>Case No</h3></li>
-      <li class="list-group-item">32'4'23/wd
+<div class="container" *ngIf="casesWithAssignedNo.length > 0">
+  <ul class="list-group" *ngFor="let case of casesWithAssignedNo">
+   
+      <li class="list-group-item">{{case.Case_no}}
           <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Assign Court</button>
 
           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
