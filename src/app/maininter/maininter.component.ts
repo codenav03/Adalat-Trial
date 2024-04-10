@@ -4,14 +4,19 @@ import { RouterLink, RouterModule } from '@angular/router';
 import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { NavbarComponent } from "../units/navbar/navbar.component";
+
 import { LowernavComponent } from '../lowernav/lowernav.component';
+
+import { FormsModule } from '@angular/forms';
+import { SearchPipe } from '../search.pipe';
+import { SharedDataService } from '../shared-data.service';
 
 @Component({
     selector: 'app-maininter',
     standalone: true,
     templateUrl: './maininter.component.html',
     styleUrl: './maininter.component.css',
-    imports: [RouterLink, RouterModule, CommonModule, NavbarComponent]
+    imports: [RouterLink, RouterModule, CommonModule, NavbarComponent,FormsModule,SearchPipe]
 })
 export class MaininterComponent implements OnInit {
   clists: Icasel[]=[];
@@ -28,11 +33,14 @@ getAllCases(){
     let clist=item.payload.toJSON() as Icasel
     this.clists.push({
       key: item.key || '',
-      cno: clist.cno,
+      Case_no: clist.Case_no,
       assign: clist.assign,
       comp: clist.comp,
+      dmail_id:clist.dmail_id,
     });
-  })
+  });
   },});
 }
+searchText='';
+
 }

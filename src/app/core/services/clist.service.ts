@@ -1,20 +1,36 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { Icasel } from '../models/common.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClistService {
-  private dbpath="/cases";
-  casesRef:AngularFireList<any>;
-  constructor(private db: AngularFireDatabase) {
-    this.casesRef=db.list(this.dbpath);
 
+  private dbPath = '/cases';
+  caseRef: AngularFireList<any>;
+  constructor(private db: AngularFireDatabase){
+    this.caseRef = db.list(this.dbPath);
   }
-  getAllCases(){
-    return this.casesRef;
-  }
-  getCase(key :string){
-    return this.db.object(`${this.dbpath}/${key}`);
-  }
+getAllCases(){
+  return this.caseRef;
+}
+
+getCase(key: string){
+  return this.db.object('${this.dbPath}/${key}')
+}
+
+addCase(expense: Icasel){
+  this.caseRef.push(expense);
+}
+
+updateCase(key: string, expense: Icasel){
+  this.caseRef.push(expense);
+}
+
+deleteCase(key: string){
+  this.caseRef.remove(key);
+}
+
+
 }

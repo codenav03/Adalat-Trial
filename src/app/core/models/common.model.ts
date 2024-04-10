@@ -1,7 +1,13 @@
 export interface Icasel
 {
   key?: string;
-  cno: string;
+  Case_no: string;
   assign:string;
   comp: string;
+  dmail_id: string;
+
+}
+export interface UserData {
+  email: string;
+  role: string;
 }

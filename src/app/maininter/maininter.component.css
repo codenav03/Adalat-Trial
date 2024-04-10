@@ -15,7 +15,7 @@ h1 {
   background-color: #333639; /* Background color */
   color: #fff; /* Text color */
   padding: 10px 20px; /* Padding around text */
-  border-radius: 5px; /* Rounded corners */
+ /* border-radius: 5px; /* Rounded corners */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Drop shadow */
 }
 /* Adjust spacing between words in h2 */
@@ -36,7 +36,40 @@ h2 {
   margin-right: auto;
   width: 80%; /* Adjust as needed */
 }
+.search-container {
+  display: flex;
+/*  justify-content: flex-end; /* Align items to the end of the flex container */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 10px;
+  width: 260px;
+  padding: 10px;
+  margin-right: 50px;
+}
 
+.container-main{
+  margin-left: 80px;
+}
+
+
+.search-input {
+  flex: 1;
+  align-content: center;
+  padding: 5px;
+  border: 2px solid rgb(51, 51, 51);
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+ 
+}
+
+
+.total{
+  display: flex;
+  float: right;
+  margin-right: 255px;
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
 /* Case list items */
 /*.list-group-item {
   padding: 10px;

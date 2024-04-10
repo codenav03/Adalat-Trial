@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-lg-6">
+
+        <h5>Case Details</h5>
+        <form [formGroup]="caseForm" (submit)="OnSubmit()">
+            <div class="mb-3">
+                <label for="Case_no" class="form-label">Case_no</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Case_no" formControlName="Case_no">
+              </div>
+              @if (caseForm.get('Case_no')?.hasError('required')  &&  caseForm.get('Case_no')?.touched){
+                <div class="form-text text-danger">Case_no required</div>
+            }
+              <div class="mb-3">
+                <label for="Title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" formControlName="title">
+              </div>
+              @if (caseForm.get('title')?.hasError('required')  &&  caseForm.get('title')?.touched){
+                  <div class="form-text text-danger">title required</div>
+              }
+              <div class="mb-3">
+                <label for="description" class="form-label">Case Description</label>
+                <textarea  class="form-control" id="description"  rows="3" formControlName="description" ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-success">Save Changes</button>
+        </form>
+    </div>
+</div>
