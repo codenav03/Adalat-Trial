@@ -17,15 +17,15 @@ import { AuthGuard } from './auth.guard';
 
 
 export const routes: Routes = [
- 
+
   {path: 'maininter',component: MaininterComponent},
 
-  {path:'home',component:HomeComponent}, 
+  {path:'home',component:HomeComponent},
   {path: 'lowerhome',component: LowerhomeComponent},
   {path:'lowercaselist',component:LowercaselistComponent},
   {path: 'lowerpending',component: LowerpendingComponent},
   {path: 'lowermaininter',component: lowermaininter},
-  {path:'',component:LowerhomeComponent},
+  {path:'lower_home',component:LowerhomeComponent},
 
   {path: 'singlecase/:caseNo/:dmailid',component: SinglecaseComponent},
   {path: 'pending',component: PendingComponent},

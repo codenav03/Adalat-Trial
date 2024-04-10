@@ -16,6 +16,7 @@ export class AuthGuard implements CanActivate {
       switchMap(user => {
         if (user) {
           return this.authService.getUserRole(user.uid);
+
         } else {
           this.router.navigate(['/login']);
           return of(false);
@@ -24,9 +25,9 @@ export class AuthGuard implements CanActivate {
       switchMap(role => {
         if (role === 'admin') {//email:user31@gmail.com password:user31@123
           return of(true);
-        } else if (role === 'lower_user') {//email:user32@123 password:user32@123
-          this.router.navigate(['/lower-case']);
-        } else if (role === 'upper_user') {//email:user33@gmail.com password:user33@123
+        } else if (role === 'lower_user') { //email:user34@gmail.com password:user34@123
+          this.router.navigate(['/lower_home']);
+        } else if (role === 'upper_user') {//email:user32@123 password:user32@123
           this.router.navigate(['/home']);
         }
         // Add more conditions for other roles
