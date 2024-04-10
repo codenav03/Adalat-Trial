@@ -51,6 +51,8 @@ getAllCases(){
       Case_no: clist.Case_no,
       assign: clist.assign,
       comp: clist.comp,
+      title: '',
+      description: ''
     });
   });
   console.log(this.clists);
