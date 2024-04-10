@@ -9,3 +9,10 @@ export interface Icasel
   dmail:string;
   description: string;
 }
+
+export interface UserData {
+  key?: string;
+  email: string;
+  role: string;
+  username: string;
+}

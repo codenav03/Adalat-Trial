@@ -15,8 +15,8 @@
           
           <button class="btn btn-sm btn-danger"(click)="removeCase()">Remove</button>
         </div>
-        <button class="btn1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Assign</button>
-        <button type="button" class="btn btn-secondary" style="margin-top: 10px;" (click)="send()">Send Mail</button>
+        <button class="btn1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" (click)="getAllCourts()">Assign</button>
+  
 
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
           <div class="offcanvas-header">
@@ -24,14 +24,15 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="list-group">
-                <li class="list-group-item">Tvm Sub Magistrate Court
-                    <button class="btn" type="button" (click)="assign()">Assign</button>
 
-
+            <ul class="list-group" *ngFor="let court of courtlist">
+              @if (court.role == "lower_user") {
+                <li class="list-group-item">CN: {{court.username}}
+                    <button class="btn btn2" type="button" (click)="assign()">Assign</button>
                 </li>
-
+              }
               </ul>
+              
           </div>
         </div>
 

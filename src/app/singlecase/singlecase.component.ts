@@ -5,9 +5,10 @@ import { FileuploadComponent } from '../dataTransfer/fileupload/fileupload.compo
 import emailjs from '@emailjs/browser';
 import { CommonModule } from '@angular/common';
 import { ClistService } from '../core/services/clist.service';
-import { Icasel } from '../core/models/common.model';
+import { Icasel,UserData } from '../core/models/common.model';
 import { ReactiveFormsModule } from '@angular/forms';
-import emailjs from '@emailjs/browser';
+import { LcourtService } from '../core/services/lcourt.service';
+
 
 @Component({
     selector: 'app-singlecase',
@@ -18,11 +19,13 @@ import emailjs from '@emailjs/browser';
 })
 export class SinglecaseComponent {
     clists: Icasel[]=[];
+    courtlist: UserData[]=[];
     caseId = '';
     myCase: Icasel | null = null; // Initialize myCase
     
     constructor(
       private clistsService: ClistService,
+      private LcourtService: LcourtService,
       private activatedRoute: ActivatedRoute,
       private router: Router,
     ){
@@ -80,6 +83,22 @@ export class SinglecaseComponent {
     });
     alert("mail has been sent");
     
+      }
+
+
+      getAllCourts(){
+        this.LcourtService.getAllCourts().snapshotChanges().subscribe({next: (data)=>{
+          this.courtlist=[];
+          data.forEach((item)=>{
+          let courtlist=item.payload.toJSON() as UserData
+          this.courtlist.push({
+            key: item.key || '',
+            username: courtlist.username,
+            email: courtlist.email,
+            role: courtlist.role,
+          });
+        });
+        },});
       }
 }
 
