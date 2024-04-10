@@ -5,5 +5,9 @@ export interface Icasel
   assign:string;
   comp: string;
   dmail_id: string;
-  
+
+}
+export interface UserData {
+  email: string;
+  role: string;
 }

@@ -6,13 +6,14 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CaseformComponent } from './caseform/caseform.component';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
   {path: 'home',component: HomeComponent},
   {path: 'maininter',component: MaininterComponent},
   {path: 'singlecase/:caseNo/:dmailid',component: SinglecaseComponent},
   {path: 'pending',component: PendingComponent},
-  {path: 'register',component:RegisterComponent},
+  {path: 'register',component:RegisterComponent,canActivate:[AuthGuard]},
   {path: 'caseform', component:CaseformComponent},
   {path:'',component:LoginComponent},
 ];

@@ -1,10 +1,12 @@
 import { Injectable, inject, signal } from "@angular/core";
 import { Auth, user } from "@angular/fire/auth";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
-import { Observable, from } from "rxjs";
+import { Observable, filter, from, map } from "rxjs";
 import { UserInterface } from "./user.interface";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { Router } from "@angular/router";
+import { AngularFireDatabase } from "@angular/fire/compat/database";
+import { UserData } from "./core/models/common.model";
 @Injectable
 ({
   providedIn: 'root',
@@ -42,7 +44,7 @@ private isAuthenticated: boolean = false;
   firebaseAuth=inject(Auth);
   user$=user(this.firebaseAuth);
   currentUserSig= signal<UserInterface | null | undefined>(undefined);
-
+  constructor(private db: AngularFireDatabase){}
   register(
     email: string,
     username: string,
@@ -77,6 +79,14 @@ private isAuthenticated: boolean = false;
   }
   isLoggedIn(): boolean {
     return this.isAuthenticated;
+  }
+  getUserRole(uid: string): Observable<string> {
+    console.log({uid})
+    return this.db.object<UserData>(`users/${uid}`).valueChanges()
+      .pipe(
+        filter(userData => !!userData), // Filter out null values
+      map(userData => userData!.role)
+      );
   }
 }
 
