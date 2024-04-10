@@ -1,5 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from "../units/navbar/navbar.component";
+
+
+
+
 import { MaininterComponent } from '../maininter/maininter.component';
 import { Icasel } from '../core/models/common.model';
 import { CommonModule } from '@angular/common';
