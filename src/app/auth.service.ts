@@ -64,7 +64,10 @@ private isAuthenticated: boolean = false;
       this.firebaseAuth,
       email,
       password,
-    ).then(()=>{this.isAuthenticated = true;});
+    ).then((data)=>{this.isAuthenticated = true;
+      console.log(data.user.email);
+      localStorage.setItem("email",data?.user?.email || '');
+    });
 
     return from(promise);
 

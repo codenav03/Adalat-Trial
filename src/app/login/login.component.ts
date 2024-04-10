@@ -47,12 +47,15 @@ export class LoginComponent {
   onSubmit(): void{
     const rawForm=this.form.getRawValue()
     this.authService.login(rawForm.email,rawForm.password)
-    .subscribe({ next:()=>{
+    .subscribe(data => console.log(data))
+   /* .subscribe({ next:(data)=>{
+      console.log("testing:",data);
       this.router.navigateByUrl('/home');
     },
     error: (err)=>{
       this.errorMessage=err.code;
     },
-    });
+    });*/
+
   }
 }
