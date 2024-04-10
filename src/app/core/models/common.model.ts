@@ -5,5 +5,7 @@ export interface Icasel
   title: string;
   assign:string;
   comp: string;
+  pmail:string;
+  dmail:string;
   description: string;
 }

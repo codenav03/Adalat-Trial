@@ -36,6 +36,8 @@ getAllCases(){
       comp: clist.comp,
       description: clist.description,
       title: clist.title,
+      pmail: '',
+      dmail: ''
     });
   });
   },});

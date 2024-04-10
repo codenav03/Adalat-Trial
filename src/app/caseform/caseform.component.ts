@@ -28,6 +28,8 @@ export class CaseformComponent {
       Case_no: new FormControl("",[Validators.required]),
       title: new FormControl("",[Validators.required]),
       description: new FormControl("",[Validators.required]),
+      pmail: new FormControl("",[Validators.required]),
+      dmail: new FormControl("",[Validators.required]),
       assign: "NO",
       comp: "NO",
     });
@@ -58,10 +60,10 @@ export class CaseformComponent {
       }
       else{
       this.ClistService.addCase(this.caseForm.value);
-      console.log('2')
+      console.log('2');
       }
       this.router.navigate(['../maininter']);
-      console.log('3')
+      console.log('3');
     }
     else{
       this.caseForm.markAllAsTouched();

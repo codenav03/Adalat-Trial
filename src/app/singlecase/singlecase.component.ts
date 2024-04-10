@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import emailjs from '@emailjs/browser';
 
 @Component({
     selector: 'app-singlecase',
@@ -64,4 +64,21 @@ export class SinglecaseComponent {
       console.log("key3",this.caseId);
     }
   }
+
+  assign(){
+    this.send(this.myCase?.dmail || '');
+    this.send(this.myCase?.pmail || '');
+  }
+
+  async send(mailid: string){
+    emailjs.init('V86Nbmh0pln1M1A2b');
+    let response=await emailjs.send("service_cn3r0w7","template_q7qo6nm",{
+    from_name: "Adalat",
+    to_name: this.myCase?.Case_no,
+    message: "your case have been assigned",
+    to_email: mailid,
+    });
+    alert("mail has been sent");
+    
+      }
 }

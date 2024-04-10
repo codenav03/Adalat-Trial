@@ -57,7 +57,9 @@ getAllCases(){
       assign: clist.assign,
       comp: clist.comp,
       title: '',
-      description: ''
+      description: '',
+      pmail: '',
+      dmail: ''
     });
   });
   console.log(this.clists);
