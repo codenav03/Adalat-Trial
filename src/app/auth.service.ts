@@ -7,11 +7,19 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { Router } from "@angular/router";
 import { AngularFireDatabase } from "@angular/fire/compat/database";
 import { UserData } from "./core/models/common.model";
+import { LcourtService } from './core/services/lcourt.service';
+
+
+
 @Injectable
 ({
   providedIn: 'root',
 })
 export class AuthService{
+
+  uid: string='';
+
+
   /*constructor(private fireauth :AngularFireAuth, private router :Router){
 
   }
@@ -44,20 +52,46 @@ private isAuthenticated: boolean = false;
   firebaseAuth=inject(Auth);
   user$=user(this.firebaseAuth);
   currentUserSig= signal<UserInterface | null | undefined>(undefined);
-  constructor(private db: AngularFireDatabase){}
+  constructor(
+    private db: AngularFireDatabase,
+    private LcourtService: LcourtService, 
+  ){}
+
+  
+
   register(
     email: string,
     username: string,
     password: string,
+    role: string,
   ): Observable<void>{
     const promise= createUserWithEmailAndPassword(
       this.firebaseAuth,
       email,
       password,
-    ).then(response => updateProfile(response.user,{displayName: username}),
+    ).then(response => updateProfile(response.user,{displayName: username}).then(()=> {this.uid = response.user.uid,this.LcourtService.addCourt(data,this.uid)})
     );
+
+    const data = {
+      // Your data fields here
+      email : email,
+      username : username,
+      role: role,
+
+    };
+
+    
     return from(promise);
   }
+
+
+  getUid(){
+    return this.uid;
+  }
+
+
+
+
   login(
     email: string,
     password: string,
@@ -91,5 +125,7 @@ private isAuthenticated: boolean = false;
       map(userData => userData!.role)
       );
   }
+
+  
 }
 

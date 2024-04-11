@@ -16,8 +16,9 @@ export class LcourtService {
     
   }
   
-  addCourt(court: UserData){
-    this.courtRef.push(court);
+  addCourt(court: UserData, customKey: string){
+    //this.courtRef.push(court);
+    this.db.object(`${this.dbPath}/${customKey}`).set(court);
   }
   
 

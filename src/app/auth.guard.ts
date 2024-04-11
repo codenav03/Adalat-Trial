@@ -10,22 +10,27 @@ import { Observable, map, of, switchMap } from 'rxjs';
 })
 export class AuthGuard implements CanActivate {
 
+ 
+
   constructor(private authService: AuthService, private router: Router) {}
   canActivate(): Observable<boolean> {
     return this.authService.user$.pipe(
       switchMap(user => {
         if (user) {
+         
           return this.authService.getUserRole(user.uid);
+          
         } else {
           this.router.navigate(['/login']);
           return of(false);
         }
+        
       }),
       switchMap(role => {
         if (role === 'admin') {//email:user31@gmail.com password:user31@123
           return of(true);
         } else if (role === 'lower_user') {//email:user32@123 password:user32@123
-          this.router.navigate(['/lower-case']);
+          this.router.navigate(['/caseform']);
         } else if (role === 'upper_user') {//email:user33@gmail.com password:user33@123
           this.router.navigate(['/home']);
         }
@@ -36,5 +41,6 @@ export class AuthGuard implements CanActivate {
       )
     );
   }
+
 
 }

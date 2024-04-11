@@ -6,6 +6,7 @@ import { AuthService } from '../auth.service';
 import { CommonModule } from '@angular/common';
 import { LcourtService } from '../core/services/lcourt.service';
 
+
 @Component({
   selector: 'app-register',
   standalone: true,
@@ -21,6 +22,7 @@ export class RegisterComponent {
   router=inject(Router);
   courtForm !: FormGroup;
   roles = ['admin', 'higher_user', 'lower_user'];
+  uid: string = '';
   
 
   constructor(
@@ -40,17 +42,20 @@ export class RegisterComponent {
 
   onSubmit(): void{ console.log('called');
     const rawForm=this.courtForm.getRawValue();
-    this.LcourtService.addCourt(this.courtForm.value);
-    console.log('court details send');
-    this.authService.register(rawForm.email,rawForm.username,rawForm.password).subscribe({ next:()=>{
+   
+    this.authService.register(rawForm.email,rawForm.username,rawForm.password,rawForm.role).subscribe({ next:()=>{
       
-      this.router.navigateByUrl('/home');
+      //this.router.navigateByUrl('/');
     },
     error: (err)=>{
       this.errorMessage=err.code;
     },
     
     });
+   /* this.uid = this.authService.getUid();
+    console.log("uid register inside:",this.uid);
+    //this.LcourtService.addCourt(this.courtForm.value,"88888");
+    console.log('court details send');*/
   }
 
 }
