@@ -10,15 +10,18 @@ import { Icasel } from '../core/models/common.model';
 import { CommonModule } from '@angular/common';
 import { SharedDataService } from '../shared-data.service';
 import { ClistService } from '../core/services/clist.service';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-pending',
     standalone: true,
     templateUrl: './pending.component.html',
     styleUrl: './pending.component.css',
-    imports: [NavbarComponent,CommonModule]
+    imports: [NavbarComponent,CommonModule,RouterLink,RouterModule]
 })
 export class PendingComponent implements OnInit{
+
+
  /* casesWithAssignedNo: Icasel[] = [];
 
   constructor(private sharedDataService: SharedDataService) { }
@@ -34,7 +37,7 @@ export class PendingComponent implements OnInit{
   }*/
   clists: Icasel[]=[];
   casesWithAssignedNo: Icasel[] = [];
-  constructor(private clistsService: ClistService,private sharedDataService: SharedDataService){
+  constructor(private clistsService: ClistService,private sharedDataService: SharedDataService,private router: Router){
 
   }
   ngOnInit(): void {
@@ -71,6 +74,11 @@ filterCasesWithAssignedNo() {
   this.sharedDataService.setCasesWithAssignedNo(casesWithAssignedNo);
   console.log(casesWithAssignedNo);
 }
+
+
+assignCourt(key:string) {
+  this.router.navigate(['/singlecase/' + key])
+  }
 }
 
 
