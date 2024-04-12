@@ -30,7 +30,7 @@ export class AuthGuard implements CanActivate {
         if (role === 'admin') {//email:user31@gmail.com password:user31@123
           return of(true);
         } else if (role === 'lower_user') {//email:user32@123 password:user32@123
-          this.router.navigate(['/caseform']);
+          this.router.navigate(['/lowerhome']);
         } else if (role === 'higher_user') {//email:user33@gmail.com password:user33@123
           this.router.navigate(['/home']);
         }
