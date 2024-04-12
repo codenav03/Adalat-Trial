@@ -7,6 +7,11 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CaseformComponent } from './caseform/caseform.component';
 import { AuthGuard } from './auth.guard';
+import { LowercaselistComponent } from './lowercaselist/lowercaselist.component';
+import { LowerchartComponent } from './lowerchart/lowerchart.component';
+import { LowerhomeComponent } from './lowerhome/lowerhome.component';
+import { LowermaintinterComponent } from './lowermaintinter/lowermaintinter.component';
+import { LowerpendingComponent } from './lowerpending/lowerpending.component';
 
 export const routes: Routes = [
   {path: 'home',component: HomeComponent},
@@ -17,4 +22,10 @@ export const routes: Routes = [
   {path: 'caseform', component:CaseformComponent},
   {path: 'caseform/:id', component:CaseformComponent},
   {path:'',component:LoginComponent},
+  {path:'lowercaselist',component:LowercaselistComponent},
+  {path:'lowerchart',component:LowerchartComponent},
+  {path:'lowerhome',component:LowerhomeComponent},
+  {path:'lowermaininter',component:LowermaintinterComponent},
+  {path:'lowerpending',component:LowerpendingComponent},
+  
 ];

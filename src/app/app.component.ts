@@ -13,11 +13,17 @@ import { AuthService } from './auth.service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './search.pipe';
+import { LowercaselistComponent } from './lowercaselist/lowercaselist.component';
+import { LowerchartComponent } from './lowerchart/lowerchart.component';
+import { LowerhomeComponent } from './lowerhome/lowerhome.component';
+import { LowermaintinterComponent } from './lowermaintinter/lowermaintinter.component';
+import { LowernavComponent } from './lowernav/lowernav.component';
+import { LowerpendingComponent } from './lowerpending/lowerpending.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,MaininterComponent,NavbarComponent,SinglecaseComponent,CommonModule,PendingComponent,ChartComponent,HomeComponent,RegisterComponent,LoginComponent,AngularFireModule,FormsModule,SearchPipe],
+  imports: [RouterOutlet,MaininterComponent,NavbarComponent,SinglecaseComponent,CommonModule,PendingComponent,ChartComponent,HomeComponent,RegisterComponent,LoginComponent,AngularFireModule,FormsModule,SearchPipe,LowercaselistComponent,LowerchartComponent,LowerhomeComponent,LowermaintinterComponent,LowernavComponent,LowerpendingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
