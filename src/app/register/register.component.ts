@@ -21,7 +21,7 @@ export class RegisterComponent {
   authService=inject(AuthService);
   router=inject(Router);
   courtForm !: FormGroup;
-  roles = ['admin', 'higher_user', 'lower_user'];
+  roles = ['higher_user', 'lower_user'];
   uid: string = '';
   
 
