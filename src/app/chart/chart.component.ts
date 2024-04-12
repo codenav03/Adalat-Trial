@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { ChartdataService } from '../services/chartdata.service';
 
 export interface data {
 	[key: string]: any;
@@ -15,7 +16,8 @@ export interface data {
         imports: [CommonModule, RouterOutlet, CanvasJSAngularChartsModule]
 })
 
-export class ChartComponent implements data  {
+export class ChartComponent implements data,OnInit {
+  totalcases: string='hi';
         chart: any;
 	isButtonVisible = false;
 
@@ -124,4 +126,22 @@ chartOptions: any;
 		this.chart.options.data = this.options["New vs Returning Visitors"];
 		this.chart.render();
 	}
+  constructor(private chartdataService: ChartdataService) {}
+
+  ngOnInit() {
+    // Subscribe to changes in chart data
+    this.chartdataService.chartData$.subscribe((data) => {
+      if (data) {
+        // Update your chart with the new data
+        this.totalcases=data;
+        console.log(this.totalcases);
+        this.updateChart(data);
+      }
+    });
+  }
+
+  // Function to update the chart with new data
+  updateChart(data: any) {
+    // Update your chart here
+  }
 }

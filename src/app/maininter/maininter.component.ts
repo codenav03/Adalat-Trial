@@ -7,6 +7,7 @@ import { NavbarComponent } from "../units/navbar/navbar.component";
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from '../search.pipe';
 import { SharedDataService } from '../shared-data.service';
+import { ChartdataService } from '../services/chartdata.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ import { SharedDataService } from '../shared-data.service';
 })
 export class MaininterComponent implements OnInit {
   clists: Icasel[]=[];
-  constructor(private clistsService: ClistService,private router: Router){
+  constructor(private clistsService: ClistService,private router: Router,private chartdataService: ChartdataService){
 
   }
   ngOnInit(): void {
@@ -47,6 +48,13 @@ singleCase(key: string){
   this.router.navigate(['/singlecase/'+ key])
 }
 
+
+  // Function to update data and trigger change in chart
+  updateChartData() {
+    const newData = this.clists.length;
+    console.log(newData)
+    this.chartdataService.updateChartData(newData);
+  }
 
 searchText='';
 

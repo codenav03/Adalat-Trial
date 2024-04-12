@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CaseformComponent } from './caseform/caseform.component';
 import { AuthGuard } from './auth.guard';
+import { ChartComponent } from './chart/chart.component';
 
 export const routes: Routes = [
   {path: 'home',component: HomeComponent},
@@ -16,5 +17,6 @@ export const routes: Routes = [
   {path: 'register',component:RegisterComponent,canActivate:[AuthGuard]},
   {path: 'caseform', component:CaseformComponent},
   {path: 'caseform/:id', component:CaseformComponent},
+  {path: 'chart', component:ChartComponent},
   {path:'',component:LoginComponent},
 ];

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChartComponent } from '../chart/chart.component';
 import { NavbarComponent } from "../units/navbar/navbar.component";
+import { ChartdataService } from '../services/chartdata.service';
 
 @Component({
     selector: 'app-home',
@@ -9,6 +10,7 @@ import { NavbarComponent } from "../units/navbar/navbar.component";
     styleUrl: './home.component.css',
     imports: [ChartComponent, NavbarComponent]
 })
-export class HomeComponent {
+export class HomeComponent{
 
 }
+
