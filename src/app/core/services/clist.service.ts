@@ -31,6 +31,10 @@ updateCase(key: string, expense: Icasel){
   this.caseRef.update(key,expense);
 }
 
+updateAssg(key: string){
+  this.caseRef.update(key,{ assign: 'YES' });
+}
+
 deleteCase(key: string){
   this.caseRef.remove(key);
 }

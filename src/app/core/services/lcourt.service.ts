@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
-import { UserData } from '../models/common.model';
+import { UserData,assginList } from '../models/common.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +9,14 @@ export class LcourtService {
 
 
   private dbPath = '/users';
+  private dbpath2 = '/assigned_list';
+
   courtRef: AngularFireList<any>;
+  assgRef: AngularFireList<any>;
   
   constructor(private db: AngularFireDatabase){
     this.courtRef = db.list(this.dbPath);
+    this.assgRef = db.list(this.dbpath2);
     
   }
   
@@ -20,8 +24,12 @@ export class LcourtService {
     //this.courtRef.push(court);
     this.db.object(`${this.dbPath}/${customKey}`).set(court);
   }
-  
 
+  addAssgList(aList: assginList){
+    this.assgRef.push(aList);
+  }
+
+  
   
 getAllCourts(){
   return this.courtRef;

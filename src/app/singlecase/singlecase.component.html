@@ -7,6 +7,9 @@
         <p class="card-text">CASE TITLE: {{myCase?.title}}</p>
         <p class="card-text">CASE DESCRIPTION: {{myCase?.description}}</p>
         
+
+      @if(myCase?.assign == "NO"){
+        <div>
         <div class="m-4">
           <app-fileupload></app-fileupload>
         </div>
@@ -16,7 +19,11 @@
           <button class="btn btn-sm btn-danger"(click)="removeCase()">Remove</button>
         </div>
         <button class="btn1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" (click)="getAllCourts()">Assign</button>
-  
+      </div>
+    }
+    @else {
+      <p>case assigned to court!</p>
+    }
 
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
           <div class="offcanvas-header">
@@ -27,8 +34,8 @@
 
             <ul class="list-group" *ngFor="let court of courtlist">
               @if (court.role == "lower_user") {
-                <li class="list-group-item">CN: {{court.username}}
-                    <button class="btn btn2" type="button" (click)="assign()">Assign</button>
+                <li class="list-group-item">CN: {{court.username}}{{myCase?.key}}
+                    <button class="btn btn2" type="button" (click)="assign(court.key!)">Assign</button>
                 </li>
               }
               </ul>

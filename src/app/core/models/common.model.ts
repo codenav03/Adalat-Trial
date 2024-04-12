@@ -16,3 +16,8 @@ export interface UserData {
   role: string;
   username: string;
 }
+
+export interface assginList{
+  lcourtId: string;
+  caseId: string;
+}
