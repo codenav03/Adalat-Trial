@@ -31,8 +31,8 @@ updateCase(key: string, expense: Icasel){
   this.caseRef.update(key,expense);
 }
 
-updateAssg(key: string){
-  this.caseRef.update(key,{ assign: 'YES' });
+assgCourt(key: string,lcourtId: string){
+  this.caseRef.update(key,{ assign: 'YES' ,lcourtId: lcourtId});
 }
 
 deleteCase(key: string){

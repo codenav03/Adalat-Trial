@@ -37,7 +37,8 @@ getAllCases(){
       description: clist.description,
       title: clist.title,
       pmail: '',
-      dmail: ''
+      dmail: '',
+      lcourtId: ''
     });
   });
   },});

@@ -69,16 +69,16 @@ export class SinglecaseComponent {
   }
 
   assign(Lid:string){
-    this.send(this.myCase?.dmail || '');
-    this.send(this.myCase?.pmail || '');
+    //this.send(this.myCase?.dmail || '');
+    //this.send(this.myCase?.pmail || '');
     const data = {
       lcourtId: Lid,
       caseId: this.caseId,
 
     }
     console.log("data freak",data);
-    this.clistsService.updateAssg(this.caseId);
-    this.LcourtService.addAssgList(data);
+    this.clistsService.assgCourt(this.caseId,Lid);
+    //this.LcourtService.addAssgList(data);
   }
 
   async send(mailid: string){

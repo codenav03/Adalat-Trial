@@ -45,7 +45,7 @@ export class RegisterComponent {
    
     this.authService.register(rawForm.email,rawForm.username,rawForm.password,rawForm.role).subscribe({ next:()=>{
       
-      //this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/register');
     },
     error: (err)=>{
       this.errorMessage=err.code;

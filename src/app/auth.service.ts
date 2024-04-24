@@ -85,13 +85,6 @@ private isAuthenticated: boolean = false;
   }
 
 
-  getUid(){
-    return this.uid;
-  }
-
-
-
-
   login(
     email: string,
     password: string,
@@ -101,8 +94,9 @@ private isAuthenticated: boolean = false;
       email,
       password,
     ).then((data)=>{this.isAuthenticated = true;
-      console.log(data.user.email);
-      localStorage.setItem("email",data?.user?.email || '');
+      console.log("freak penne",data.user.uid);
+      localStorage.setItem("lcourtId",data.user.uid);
+      //console.log("edi penne",localStorage.getItem("lcourtId") || '');
     });
 
     return from(promise);

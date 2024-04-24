@@ -62,7 +62,8 @@ getAllCases(){
       title: '',
       description: '',
       pmail: '',
-      dmail: ''
+      dmail: '',
+      lcourtId: ''
     });
   });
   console.log(this.clists);
