@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LowernavComponent } from '../lowernav/lowernav.component';
 import { LowerchartComponent } from '../lowerchart/lowerchart.component';
 
+
 @Component({
   selector: 'app-lowerhome',
   standalone: true,

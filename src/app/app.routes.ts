@@ -27,5 +27,5 @@ export const routes: Routes = [
   {path:'lowerhome',component:LowerhomeComponent},
   {path:'lowermaininter',component:LowermaintinterComponent},
   {path:'lowerpending',component:LowerpendingComponent},
-  
+
 ];

@@ -11,7 +11,7 @@ describe('LowerchartComponent', () => {
       imports: [LowerchartComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(LowerchartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

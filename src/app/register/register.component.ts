@@ -16,18 +16,18 @@ import { LcourtService } from '../core/services/lcourt.service';
 })
 export class RegisterComponent {
 
- 
+
   http=inject(HttpClient);
   authService=inject(AuthService);
   router=inject(Router);
   courtForm !: FormGroup;
   roles = ['higher_user', 'lower_user'];
   uid: string = '';
-  
+
 
   constructor(
     private fb: FormBuilder,
-    private LcourtService: LcourtService, 
+    private LcourtService: LcourtService,
   ){
   this.courtForm=this.fb.nonNullable.group({
     username: ['',Validators.required],
@@ -37,20 +37,20 @@ export class RegisterComponent {
   });
 }
   errorMessage: string | null=null;
-  
-  
+
+
 
   onSubmit(): void{ console.log('called');
     const rawForm=this.courtForm.getRawValue();
-   
+
     this.authService.register(rawForm.email,rawForm.username,rawForm.password,rawForm.role).subscribe({ next:()=>{
-      
-      //this.router.navigateByUrl('/');
+
+      this.router.navigateByUrl('/');
     },
     error: (err)=>{
       this.errorMessage=err.code;
     },
-    
+
     });
    /* this.uid = this.authService.getUid();
     console.log("uid register inside:",this.uid);
