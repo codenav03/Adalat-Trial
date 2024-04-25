@@ -5,7 +5,7 @@
 }
 .nav-item{
   display: flex;
-  align-content: space-between;
+  align-content: space-between,center;
   margin-right: 50px;
   margin-left: 50px;
 }

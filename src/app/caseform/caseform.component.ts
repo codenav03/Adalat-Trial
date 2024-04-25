@@ -4,13 +4,14 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NavbarComponent } from "../units/navbar/navbar.component";
 
 @Component({
-  selector: 'app-caseform',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './caseform.component.html',
-  styleUrl: './caseform.component.css'
+    selector: 'app-caseform',
+    standalone: true,
+    templateUrl: './caseform.component.html',
+    styleUrl: './caseform.component.css',
+    imports: [CommonModule, ReactiveFormsModule, NavbarComponent]
 })
 export class CaseformComponent {
   [x: string]: any;
