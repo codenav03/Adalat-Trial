@@ -19,11 +19,12 @@ import { LowerhomeComponent } from './lowerhome/lowerhome.component';
 import { LowermaintinterComponent } from './lowermaintinter/lowermaintinter.component';
 import { LowernavComponent } from './lowernav/lowernav.component';
 import { LowerpendingComponent } from './lowerpending/lowerpending.component';
+import { LowersinglecaseComponent } from './lowersinglecase/lowersinglecase.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,MaininterComponent,NavbarComponent,SinglecaseComponent,CommonModule,PendingComponent,ChartComponent,HomeComponent,RegisterComponent,LoginComponent,AngularFireModule,FormsModule,SearchPipe,LowercaselistComponent,LowerchartComponent,LowerhomeComponent,LowermaintinterComponent,LowernavComponent,LowerpendingComponent],
+  imports: [RouterOutlet,MaininterComponent,NavbarComponent,SinglecaseComponent,CommonModule,PendingComponent,ChartComponent,HomeComponent,RegisterComponent,LoginComponent,AngularFireModule,FormsModule,SearchPipe,LowercaselistComponent,LowerchartComponent,LowerhomeComponent,LowermaintinterComponent,LowernavComponent,LowerpendingComponent,LowersinglecaseComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

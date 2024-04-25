@@ -1,0 +1,38 @@
+<app-lowernav></app-lowernav>
+<div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{myCase?.Case_no}}</h5>
+        <p class="card-text">CASE TITLE: {{myCase?.title}}</p>
+        <p class="card-text">CASE DESCRIPTION: {{myCase?.description}}</p>
+        <form >
+          <a href="https://blog.ipleaders.in/wp-content/uploads/2014/07/Tulsa-family-court.jpg" download="">
+            <input type="button" class="casebutton" value="Case Details">
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Upload Case Details</h5>
+         <div>
+                <form >
+                  <a href="https://blog.ipleaders.in/wp-content/uploads/2014/07/Tulsa-family-court.jpg" download="">
+                    <input type="button" value="Upload">
+                  </a>
+                </form>
+         </div>
+          <div class="arrow">
+            <i class="fa-solid fa-hand-pointer"></i>
+          </div>
+          <div>
+            Click above to upload the Case Report.
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+

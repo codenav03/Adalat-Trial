@@ -15,7 +15,7 @@ import { SearchPipe } from '../search.pipe';
 })
 export class LowermaintinterComponent {
   clists: Icasel[]=[];
-  
+
   constructor(private clistsService: ClistService,private router: Router){
 
   }
@@ -29,7 +29,7 @@ getAllCases(){
     let clist=item.payload.toJSON() as Icasel
     const lId = localStorage.getItem("lcourtId");
     console.log("freak penne",lId);
-    
+
     if(clist.lcourtId==lId){
     this.clists.push({
       key: item.key || '',
@@ -48,7 +48,7 @@ getAllCases(){
 }
 
 singleCase(key: string){
-  this.router.navigate(['/singlecase/'+ key])
+  this.router.navigate(['/lowersinglecase/'+ key])
 }
 
 

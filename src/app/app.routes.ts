@@ -12,6 +12,7 @@ import { LowerchartComponent } from './lowerchart/lowerchart.component';
 import { LowerhomeComponent } from './lowerhome/lowerhome.component';
 import { LowermaintinterComponent } from './lowermaintinter/lowermaintinter.component';
 import { LowerpendingComponent } from './lowerpending/lowerpending.component';
+import { LowersinglecaseComponent } from './lowersinglecase/lowersinglecase.component';
 
 export const routes: Routes = [
   {path: 'home',component: HomeComponent},
@@ -27,5 +28,6 @@ export const routes: Routes = [
   {path:'lowerhome',component:LowerhomeComponent},
   {path:'lowermaininter',component:LowermaintinterComponent},
   {path:'lowerpending',component:LowerpendingComponent},
-  
+  {path:'lowersinglecase/:id',component:LowersinglecaseComponent},
+
 ];
