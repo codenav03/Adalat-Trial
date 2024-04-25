@@ -39,7 +39,8 @@ getAllCases(){
       pmail: '',
       dmail: '',
       lcourtId: '',
-      date: ''
+      date: '',
+      url: ''
     });
   });
   },});

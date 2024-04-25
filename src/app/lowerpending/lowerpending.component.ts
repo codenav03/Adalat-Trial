@@ -40,7 +40,8 @@ export class LowerpendingComponent {
         pmail: '',
         dmail: '',
         lcourtId: '',
-        date: ''
+        date: '',
+        url: ''
       });
     }
 

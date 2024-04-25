@@ -6,25 +6,27 @@
         <h5 class="card-title">{{myCase?.Case_no}}</h5>
         <p class="card-text">CASE TITLE: {{myCase?.title}}</p>
         <p class="card-text">CASE DESCRIPTION: {{myCase?.description}}</p>
-        <form >
+        <!--<form >
           <a href="https://blog.ipleaders.in/wp-content/uploads/2014/07/Tulsa-family-court.jpg" download="">
             <input type="button" class="casebutton" value="Case Details">
           </a>
-        </form>
+        </form>-->
+        <button class="btn btn-success" (click)="downloadFile()">Case Details</button>
+        
       </div>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
+        <!--file upload -->
         <h5 class="card-title">Upload Case Details</h5>
          <div>
-                <form >
-                  <a href="https://blog.ipleaders.in/wp-content/uploads/2014/07/Tulsa-family-court.jpg" download="">
-                    <input type="button" value="Upload">
-                  </a>
-                </form>
+          <input type="file" (change)="onFileSelected($event)">
+          <button class="btn btn-success" (click)="uploadFile()">Upload File</button>
          </div>
+
+
           <div class="arrow">
             <i class="fa-solid fa-hand-pointer"></i>
           </div>

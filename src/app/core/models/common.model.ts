@@ -10,6 +10,7 @@ export interface Icasel
   description: string;
   lcourtId:string;
   date:string;
+  url:string;
 }
 
 export interface UserData {

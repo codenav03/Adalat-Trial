@@ -15,6 +15,7 @@ import { ClistService } from '../../core/services/clist.service';
 export class FileuploadComponent {
   title = 'fileupload';
   caseId = '';
+  selectedFile: File | null = null; 
 
   constructor(
     private fireStorage:AngularFireStorage,
@@ -41,24 +42,40 @@ export class FileuploadComponent {
       });
     }
 
-    onFileChange(event: any) {
-      const file = event.target.files[0];
-      if (file) {
+    onFileSelected(event: any) {
+      this.selectedFile = event.target.files[0];
+     /* if (file) {
         this.uploadFile(file);
+      }*/
+    }
+
+    uploadFile() {
+      if (this.selectedFile) {
+        this.fileService.uploadFile(this.selectedFile,'caseReport')
+          .then(downloadUrl => {
+            console.log('File uploaded successfully. Download URL:', downloadUrl);
+          })
+          .catch(error => {
+            console.error('Error uploading file:', error);
+          });
+      } else {
+        console.error('No file selected.');
       }
     }
   
-    uploadFile(file: File) {
-      this.fileService.uploadFile(file)
+   /* uploadFile(file: File) {
+      this.fileService.uploadFile(file,'caseFile')
         .then(downloadUrl => {
           console.log('File uploaded. Download URL:', downloadUrl);
           // You can do further processing here, such as displaying a success message
-          this.ClistService.uploadUrl(this.caseId,downloadUrl);
+          this.ClistService.uploadCaseFile(this.caseId,file.name);
         })
         .catch(error => {
           console.error('Error uploading file:', error);
           // Handle error, such as displaying an error message to the user
         });
-    }
+    }*/
+
+
   }
 

@@ -36,9 +36,14 @@ assgCourt(key: string,lcourtId: string,date: string){
 }
 //need to add flag notseen
 
-uploadUrl(key: string,url: string){
-  this.caseRef.update(key,{url: url});
+uploadCaseFile(key: string,filename: string){
+  this.caseRef.update(key,{url: filename});
 }
+
+uploadCaseReport(key: string,filename: string){
+  this.caseRef.update(key,{report: filename});
+}
+
 
 deleteCase(key: string){
   this.caseRef.remove(key);

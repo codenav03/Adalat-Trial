@@ -9,6 +9,7 @@ import { ClistService } from '../core/services/clist.service';
 import emailjs from '@emailjs/browser';
 import { LcourtService } from '../core/services/lcourt.service';
 import { LowernavComponent } from "../lowernav/lowernav.component";
+import { FileService } from '../core/services/file.service';
 @Component({
     selector: 'app-lowersinglecase',
     standalone: true,
@@ -21,12 +22,16 @@ export class LowersinglecaseComponent {
   courtlist: UserData[]=[];
   caseId = '';
   myCase: Icasel | null = null; // Initialize myCase
+  selectedFile: File | null = null; 
+
 
   constructor(
     private clistsService: ClistService,
     private LcourtService: LcourtService,
     private activatedRoute: ActivatedRoute,
+    private ClistService: ClistService,
     private router: Router,
+    private fileService: FileService,
   ){
 
   }
@@ -43,7 +48,7 @@ export class LowersinglecaseComponent {
       next:(data)=>{
         let myCase =data.payload.toJSON() as Icasel;
         if(myCase){
-        console.log('ID:', myCase.description);
+        //console.log('ID:', myCase.description);
         this.myCase = myCase;
         console.log('My Case:', this.myCase);
         console.log("key",key);
@@ -53,5 +58,68 @@ export class LowersinglecaseComponent {
         }
       },
     });
+  }
+
+  /*downloadFileFromUrl() {
+    console.log("filedwnld called");
+    this.fileService.downloadFile(this.myCase?.url || '')
+      .then(downloadUrl => {
+        // Here you can handle the download URL, for example, open it in a new tab
+        window.open(downloadUrl);
+      })
+      .catch(error => {
+        console.error('Error downloading file:', error);
+      });
+  }*/
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
+  }
+
+  /*uploadFile(file: File) {
+    this.fileService.uploadFile(file,'caseFile')
+      .then(downloadUrl => {
+        console.log('File uploaded. Download URL:', downloadUrl);
+        // You can do further processing here, such as displaying a success message
+        this.ClistService.uploadCaseReport(this.caseId,file.name);
+      })
+      .catch(error => {
+        console.error('Error uploading file:', error);
+        // Handle error, such as displaying an error message to the user
+      });
+  }*/
+
+  uploadFile() {
+    if (this.selectedFile) {
+      this.fileService.uploadFile(this.selectedFile,'caseReport')
+        .then(downloadUrl => {
+          console.log('File uploaded successfully. Download URL:', downloadUrl);
+        })
+        .catch(error => {
+          console.error('Error uploading file:', error);
+        });
+    } else {
+      console.error('No file selected.');
+    }
+  }
+
+
+  downloadFile() {
+    this.fileService.downloadFile('caseFile/'+this.myCase?.url)
+      .then(downloadUrl => {
+        //console.log('File downloaded successfully. Download URL:', downloadUrl);
+        // Use the downloadUrl to initiate file download (e.g., using an anchor tag)
+        console.log('File downloaded successfully. Download URL:', downloadUrl);
+        const anchor = document.createElement('a');
+        anchor.href = downloadUrl;
+        anchor.target = '_blank';
+        anchor.download = this.myCase?.url || ''; // Set the file name
+        // Trigger the click event asynchronously to ensure it happens after other async operations
+        setTimeout(() => {
+          anchor.click();
+        }, 0);
+      })
+      .catch(error => {
+        console.error('Error downloading file:', error);
+      });
   }
 }

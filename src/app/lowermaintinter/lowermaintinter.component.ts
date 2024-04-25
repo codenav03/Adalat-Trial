@@ -42,6 +42,7 @@ getAllCases(){
       dmail: '',
       lcourtId: '',
       date: clist.date,
+      url: ''
     });
   }
   });

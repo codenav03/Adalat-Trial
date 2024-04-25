@@ -64,7 +64,8 @@ getAllCases(){
       pmail: '',
       dmail: '',
       lcourtId: '',
-      date: ''
+      date: '',
+      url: ''
     });
   });
   console.log(this.clists);
