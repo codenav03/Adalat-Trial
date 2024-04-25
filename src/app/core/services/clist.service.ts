@@ -44,6 +44,10 @@ uploadCaseReport(key: string,filename: string){
   this.caseRef.update(key,{report: filename});
 }
 
+closeCase(key: string){
+  this.caseRef.update(key,{comp: "YES"});
+}
+
 
 deleteCase(key: string){
   this.caseRef.remove(key);

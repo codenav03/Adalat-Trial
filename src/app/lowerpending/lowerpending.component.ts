@@ -41,7 +41,8 @@ export class LowerpendingComponent {
         dmail: '',
         lcourtId: '',
         date: '',
-        url: ''
+        url: '',
+        report: ''
       });
     }
 

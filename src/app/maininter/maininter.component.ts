@@ -40,7 +40,8 @@ getAllCases(){
       dmail: '',
       lcourtId: '',
       date: '',
-      url: ''
+      url: '',
+      report: ''
     });
   });
   },});

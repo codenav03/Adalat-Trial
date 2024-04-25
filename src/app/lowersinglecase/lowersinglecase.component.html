@@ -23,7 +23,7 @@
         <h5 class="card-title">Upload Case Details</h5>
          <div>
           <input type="file" (change)="onFileSelected($event)">
-          <button class="btn btn-success" (click)="uploadFile()">Upload File</button>
+          <button class="btn btn-success btn-sm" (click)="uploadFile()">Upload File</button>
          </div>
 
 
@@ -32,6 +32,10 @@
           </div>
           <div>
             Click above to upload the Case Report.
+          </div>
+
+          <div class="pt-5">
+            <button class="btn btn-danger" (click)="closeCase()">Mark Case as Closed</button>
           </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ export interface Icasel
   lcourtId:string;
   date:string;
   url:string;
+  report:string;
 }
 
 export interface UserData {

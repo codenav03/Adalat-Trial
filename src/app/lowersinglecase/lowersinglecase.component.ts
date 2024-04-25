@@ -90,6 +90,7 @@ export class LowersinglecaseComponent {
 
   uploadFile() {
     if (this.selectedFile) {
+      this.ClistService.uploadCaseReport(this.caseId,this.selectedFile.name);
       this.fileService.uploadFile(this.selectedFile,'caseReport')
         .then(downloadUrl => {
           console.log('File uploaded successfully. Download URL:', downloadUrl);
@@ -121,5 +122,9 @@ export class LowersinglecaseComponent {
       .catch(error => {
         console.error('Error downloading file:', error);
       });
+  }
+
+  closeCase(){
+    this.ClistService.closeCase(this.caseId);
   }
 }

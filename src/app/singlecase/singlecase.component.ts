@@ -8,6 +8,7 @@ import { ClistService } from '../core/services/clist.service';
 import { Icasel,UserData } from '../core/models/common.model';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LcourtService } from '../core/services/lcourt.service';
+import { FileService } from '../core/services/file.service';
 
 
 @Component({
@@ -30,6 +31,7 @@ export class SinglecaseComponent {
       private LcourtService: LcourtService,
       private activatedRoute: ActivatedRoute,
       private router: Router,
+      private fileService: FileService,
     ){
 
     }
@@ -110,6 +112,26 @@ export class SinglecaseComponent {
           });
         });
         },});
+      }
+
+      downloadFile() {
+        this.fileService.downloadFile('caseReport/'+this.myCase?.report)
+          .then(downloadUrl => {
+            //console.log('File downloaded successfully. Download URL:', downloadUrl);
+            // Use the downloadUrl to initiate file download (e.g., using an anchor tag)
+            console.log('File downloaded successfully. Download URL:', downloadUrl);
+            const anchor = document.createElement('a');
+            anchor.href = downloadUrl;
+            anchor.target = '_blank';
+            anchor.download = this.myCase?.report || ''; // Set the file name
+            // Trigger the click event asynchronously to ensure it happens after other async operations
+            setTimeout(() => {
+              anchor.click();
+            }, 0);
+          })
+          .catch(error => {
+            console.error('Error downloading file:', error);
+          });
       }
 }
 
