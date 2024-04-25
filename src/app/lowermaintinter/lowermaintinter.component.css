@@ -89,5 +89,8 @@ body, h1, h2{
     color: rgb(206, 199, 5);
     height: .5cm;
   }
+  .cno{
+    width: 5cm;
+  }
 
  

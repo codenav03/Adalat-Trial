@@ -3,6 +3,7 @@ import { LowernavComponent } from '../lowernav/lowernav.component';
 import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lowerpending',
@@ -14,7 +15,10 @@ import { CommonModule } from '@angular/common';
 export class LowerpendingComponent {
 
   clists: Icasel[]=[];
-  constructor(private clistsService: ClistService){
+  constructor(
+    private clistsService: ClistService,
+    private router: Router,
+  ){
 
   }
   ngOnInit(): void {
@@ -50,5 +54,9 @@ export class LowerpendingComponent {
     });
     },});
   }
+
+  singleCase(key:string) {
+    this.router.navigate(['/lowersinglecase/' + key])
+    }
   
 }

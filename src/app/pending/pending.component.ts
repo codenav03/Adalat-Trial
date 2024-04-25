@@ -37,7 +37,10 @@ export class PendingComponent implements OnInit{
   }*/
   clists: Icasel[]=[];
   casesWithAssignedNo: Icasel[] = [];
-  constructor(private clistsService: ClistService,private sharedDataService: SharedDataService,private router: Router){
+  constructor(
+    private clistsService: ClistService,
+    private sharedDataService: SharedDataService,
+    private router: Router){
 
   }
   ngOnInit(): void {
