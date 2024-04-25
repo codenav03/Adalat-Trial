@@ -1,6 +1,6 @@
-.bdy{
+.body{
     background-color: rgb(255, 255, 255);
-    margin-left: 300px;
+    
   
   }
   
@@ -13,3 +13,7 @@
     color: white;
   }
   
+  .container{
+    display: flex;
+    justify-content: center;
+  }

@@ -13,3 +13,24 @@
     color: white;
   }
   
+
+  .eachlist{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .listhead{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h2 {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    margin-bottom: 20px; /* Adjust as needed for spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
