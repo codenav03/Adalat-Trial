@@ -9,6 +9,7 @@ export interface Icasel
   dmail:string;
   description: string;
   lcourtId:string;
+  date:string;
 }
 
 export interface UserData {
