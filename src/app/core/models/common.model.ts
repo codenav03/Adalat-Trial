@@ -12,6 +12,7 @@ export interface Icasel
   date:string;
   url:string;
   report:string;
+  flag:string;
 }
 
 export interface UserData {

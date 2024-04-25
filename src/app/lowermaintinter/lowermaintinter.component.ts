@@ -43,7 +43,8 @@ getAllCases(){
       lcourtId: '',
       date: clist.date,
       url: '',
-      report: ''
+      report: '',
+      flag: ''
     });
   }
   });

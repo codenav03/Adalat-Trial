@@ -42,7 +42,8 @@ export class LowerpendingComponent {
         lcourtId: '',
         date: '',
         url: '',
-        report: ''
+        report: '',
+        flag: ''
       });
     }
 

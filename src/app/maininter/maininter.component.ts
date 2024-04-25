@@ -41,7 +41,8 @@ getAllCases(){
       lcourtId: '',
       date: '',
       url: '',
-      report: ''
+      report: '',
+      flag: ''
     });
   });
   },});

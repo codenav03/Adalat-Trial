@@ -45,7 +45,9 @@ this.clistsService.getAllCases().snapshotChanges().subscribe({next: (data)=>{
     dmail: '',
     lcourtId: '',
     date: '',
-    url: ''
+    url: '',
+    report: '',
+    flag: ''
   });
 });
 console.log(this.clists);

@@ -32,7 +32,7 @@ updateCase(key: string, expense: Icasel){
 }
 
 assgCourt(key: string,lcourtId: string,date: string){
-  this.caseRef.update(key,{ assign: 'YES' ,lcourtId: lcourtId,date: date});
+  this.caseRef.update(key,{ assign: 'YES' ,lcourtId: lcourtId,date: date,flag:"NOREAD"});
 }
 //need to add flag notseen
 

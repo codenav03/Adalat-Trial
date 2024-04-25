@@ -66,7 +66,8 @@ getAllCases(){
       lcourtId: '',
       date: '',
       url: '',
-      report: ''
+      report: '',
+      flag: ''
     });
   });
   console.log(this.clists);

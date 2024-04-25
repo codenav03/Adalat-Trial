@@ -49,7 +49,9 @@ this.clistsService.getAllCases().snapshotChanges().subscribe({next: (data)=>{
     dmail: '',
     lcourtId: '',
     date: clist.date,
-    url: ''
+    url: '',
+    report: '',
+    flag: ''
   });
 }
 });
