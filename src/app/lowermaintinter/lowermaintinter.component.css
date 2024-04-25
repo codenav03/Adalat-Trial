@@ -31,11 +31,11 @@ body, h1, h2{
   }
   
   /* Case list container */
-  .list-group {
+  /*.list-group {
     margin-left: auto;
     margin-right: auto;
-    width: 80%; /* Adjust as needed */
-  }
+    width: 80%;  Adjust as needed 
+  }*/
   
   /* Case list items */
   /*.list-group-item {
@@ -67,3 +67,13 @@ body, h1, h2{
     width: 50px;
   }
   
+  .list-group-item,.list-group-item-action{
+    display: flex;
+    justify-content: space-between;
+  }
+  .headinglist{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  
+  }
