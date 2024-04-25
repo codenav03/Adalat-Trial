@@ -44,7 +44,7 @@ getAllCases(){
       date: clist.date,
       url: '',
       report: '',
-      flag: ''
+      flag: clist.flag,
     });
   }
   });
@@ -52,6 +52,7 @@ getAllCases(){
 }
 
 singleCase(key: string){
+  this.clistsService.seenCase(key);
   this.router.navigate(['/lowersinglecase/'+ key])
 }
 

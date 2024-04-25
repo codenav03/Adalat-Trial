@@ -5,8 +5,14 @@
     <h2><div class="headinglist"><b>CASE NO</b><b> ASSIGNED DATE</b><b>COMPLETED</b></div></h2>
    <!-- @for (clist of clists; track $index) { -->
     <div class="list-group" *ngFor="let clist of clists | search: searchText">
-      <button  class="list-group-item list-group-item-action" (click)="singleCase(clist.key!)"><b>{{clist.Case_no}}</b><b>{{clist.date}}</b> <b>{{clist.comp}}</b> </button>
-  
+      <button  class="list-group-item list-group-item-action" (click)="singleCase(clist.key!)">
+        <b class="d-flex align-items-center">{{clist.Case_no}}
+          @if(clist.flag == "NOTSEEN"){
+        <div class="new">&nbsp;&nbsp;  ( new )</div>
+          }
+      </b><b>{{clist.date}}</b> <b>{{clist.comp}}</b>
+      </button>
+      
     </div>
  
   

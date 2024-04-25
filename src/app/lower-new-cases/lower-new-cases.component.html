@@ -1,1 +1,15 @@
-<p>lower-new-cases works!</p>
+<div class="container">
+  
+    <h2><div class="headinglist"><b>NEW CASES ASSIGNED</b></div></h2>
+   <!-- @for (clist of clists; track $index) { -->
+    <div class="list-group" *ngFor="let clist of clists">
+      <div  class="list-group-item list-group-item-action">
+        <b>{{clist.Case_no}}</b><b>{{clist.date}}</b> 
+        <button class="btn btn1" type="button" (click)="seencase(clist?.key!)">Mark As Seen</button>
+    </div>
+  
+    </div>
+ 
+  
+</div>
+ 

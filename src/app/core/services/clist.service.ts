@@ -36,6 +36,10 @@ assgCourt(key: string,lcourtId: string,date: string){
 }
 //need to add flag notseen
 
+seenCase(key: string){
+  this.caseRef.update(key,{flag: "SEEN"});
+}
+
 uploadCaseFile(key: string,filename: string){
   this.caseRef.update(key,{url: filename});
 }

@@ -1,0 +1,95 @@
+/* Reset default margin and padding */
+body, h1, h2{
+    margin: 0;
+    padding: 0;
+  }
+  .list-group-item{
+    background-color: rgb(51, 51, 51);
+    color: white;
+  }
+  .total{
+    display: flex;
+    float: right;
+    margin-right: 255px;
+    margin-top: 45px;
+    margin-bottom: 20px;
+  }
+  /* Center align h1 */
+  h1 {
+    text-align: center;
+    margin-top: 0px; /* Adjust as needed for spacing */
+    font-family: 'Arial', sans-serif; /* Choose a nicer font */
+    background-color: #333639; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding around text */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Drop shadow */
+  }
+  /* Adjust spacing between words in h2 */
+  h2 {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    margin-bottom: 20px; /* Adjust as needed for spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Case list container */
+  /*.list-group {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;  Adjust as needed 
+  }*/
+  
+  /* Case list items */
+  /*.list-group-item {
+    padding: 10px;
+    background-color: #ddd;
+    border: 1px solid rgb(49, 44, 44);
+    margin-bottom: 30px;
+    color: #333;
+    text-decoration: none;
+      word-spacing: 0px;
+      display: flex;
+      align-items: center;
+      align-content: space-between;
+
+
+  }*/
+  .list-group-item list-group-item-action{
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    margin-left: 100px;
+  }
+  /* Hover effect */
+  .list-group-item:hover {
+    background-color: #e0e0e0;
+  }
+  .arrow{
+    height: 50px;
+    width: 50px;
+  }
+  
+  .list-group-item,.list-group-item-action{
+    display: flex;
+    justify-content: space-between;
+  }
+  .headinglist{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  
+  }
+  .btn1{
+    float: right;
+    background-color: rgb(145, 140, 140);
+    color: white;
+  }
+  .btn1:hover{
+    background-color: rgb(39, 39, 40);
+    color: white;
+  }
