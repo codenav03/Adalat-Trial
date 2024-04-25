@@ -22,7 +22,9 @@ export class SinglecaseComponent {
     courtlist: UserData[]=[];
     caseId = '';
     myCase: Icasel | null = null; // Initialize myCase
-    
+    currentDate: string = '';
+
+
     constructor(
       private clistsService: ClistService,
       private LcourtService: LcourtService,
@@ -71,13 +73,14 @@ export class SinglecaseComponent {
   assign(Lid:string){
     //this.send(this.myCase?.dmail || '');
     //this.send(this.myCase?.pmail || '');
+    this.currentDate = new Date().toLocaleDateString();
     const data = {
       lcourtId: Lid,
       caseId: this.caseId,
 
     }
     console.log("data freak",data);
-    this.clistsService.assgCourt(this.caseId,Lid);
+    this.clistsService.assgCourt(this.caseId,Lid,this.currentDate);
     //this.LcourtService.addAssgList(data);
   }
 

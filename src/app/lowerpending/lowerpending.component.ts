@@ -39,7 +39,8 @@ export class LowerpendingComponent {
         title: clist.title,
         pmail: '',
         dmail: '',
-        lcourtId: ''
+        lcourtId: '',
+        date: ''
       });
     }
 

@@ -40,7 +40,8 @@ getAllCases(){
       title: clist.title,
       pmail: '',
       dmail: '',
-      lcourtId: ''
+      lcourtId: '',
+      date: clist.date,
     });
   }
   });

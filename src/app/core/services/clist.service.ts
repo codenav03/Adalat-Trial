@@ -31,8 +31,13 @@ updateCase(key: string, expense: Icasel){
   this.caseRef.update(key,expense);
 }
 
-assgCourt(key: string,lcourtId: string){
-  this.caseRef.update(key,{ assign: 'YES' ,lcourtId: lcourtId});
+assgCourt(key: string,lcourtId: string,date: string){
+  this.caseRef.update(key,{ assign: 'YES' ,lcourtId: lcourtId,date: date});
+}
+//need to add flag notseen
+
+uploadUrl(key: string,url: string){
+  this.caseRef.update(key,{url: url});
 }
 
 deleteCase(key: string){
