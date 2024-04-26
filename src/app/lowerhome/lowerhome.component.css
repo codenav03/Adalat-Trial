@@ -5,7 +5,7 @@
   }
   
   .crd{
-    background-color: rgba(145, 146, 120, 0.959);
+    background-color: #a79271d2;
     color: white;
   }
   .but{
@@ -26,7 +26,7 @@
 
   h2 {
     font-family: Arial, sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
