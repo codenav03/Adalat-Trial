@@ -3,24 +3,22 @@
   <!--<h1>CASE LIST</h1 >-->
 
 <div class="total">
-  <h5 class="fw-bold text-dark">Total Cases : <strong>{{courtLists.length}}</strong></h5>
+  <h5 class="fw-bold text-dark">Total Courts : <strong>{{courtLists.length}}</strong></h5>
 </div>
 
 
    <div class="container-main">
     <div class="container m-5 d-flex align-items-center justify-content-between">
-      <button type="button" class="btn btn-warning " routerLink="/caseform">Add Case</button>
       <div class="search-container">
         <input class="form-control search-input" type="text" placeholder="Search by Cases" [(ngModel)]="searchText">
       </div>
     </div>
 
    </div>
-  <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CASE NO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ASSIGNED &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COMPLETED</h2>
   <!--@for (clist of clists; track $index| search: searchText) {  -->
     <div class="list-group" *ngFor="let clist of courtLists | search: searchText">
         <div  class="list-group-item list-group-item-action" >
-          <b class="d-flex align-items-center cno">{{clist.Case_no}}</b>
+          <b class="d-flex align-items-center cno">{{clist.username}}</b>
 
         </div>
   
