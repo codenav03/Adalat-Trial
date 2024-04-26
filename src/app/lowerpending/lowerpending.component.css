@@ -16,12 +16,12 @@
 
   .eachlist{
     display: flex;
-    justify-content: space-between;
+    
   }
 
   .listhead{
     display: flex;
-    justify-content: space-between;
+    
   }
 
   h2 {
@@ -33,4 +33,16 @@
     padding: 10px 0;
     margin-bottom: 20px; /* Adjust as needed for spacing */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .cno{
+    width: 5cm;
+  }
+
+  .space{
+    width: 12cm;
+  }
+
+  .space1{
+    width: 9cm;
   }
