@@ -1,5 +1,8 @@
 
 <app-lowernav></app-lowernav>
+<div class="search-container">
+  <input class="form-control search-input" type="text" placeholder="Search by Cases" [(ngModel)]="searchText">
+</div>
 <div class="total">
   <h4 class="fw-bold text-dark"><span class="badge text-bg-dark">Total Cases :&nbsp; <strong>{{clists.length}}</strong></span></h4>
 </div>
