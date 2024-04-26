@@ -53,7 +53,7 @@ export class FileuploadComponent {
       if (this.selectedFile) {
         this.fileService.uploadFile(this.selectedFile,'caseReport')
           .then(downloadUrl => {
-            console.log('File uploaded successfully. Download URL:', downloadUrl);
+            alert('File uploaded successfully.');
           })
           .catch(error => {
             console.error('Error uploading file:', error);
