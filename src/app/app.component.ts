@@ -45,5 +45,5 @@ export class AppComponent implements OnInit{
       });
   }
 
-  title = 'courtfront';
+  title = 'Adalat trail';
 }
