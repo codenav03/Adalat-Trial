@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ChartComponent } from '../chart/chart.component';
 import { NavbarComponent } from "../units/navbar/navbar.component";
-import { Icasel } from '../core/models/common.model';
+import { Icasel, UserData } from '../core/models/common.model';
 import { ClistService } from '../core/services/clist.service';
 import { Router } from '@angular/router';
 import { SharedDataService } from '../shared-data.service';
@@ -15,6 +15,7 @@ import { SharedDataService } from '../shared-data.service';
 })
 export class HomeComponent {
   clists: Icasel[]=[];
+  courtLists: UserData[]=[];
 casesWithAssignedNo: Icasel[] = [];
 pendingcasesCount: number=0;
 assignedcasesCount: number=0;
@@ -26,34 +27,53 @@ constructor(private clistsService: ClistService,private router: Router,private s
 
 ngOnInit(): void {
 this.getAllCases();
-
+this.getAllCourts();
 
 }
 getAllCases(){
-this.clistsService.getAllCases().snapshotChanges().subscribe({next: (data)=>{
-  this.clists=[];
-  data.forEach((item)=>{
-  let clist=item.payload.toJSON() as Icasel
-  this.clists.push({
-    key: item.key || '',
-    Case_no: clist.Case_no,
-    assign: clist.assign,
-    comp: clist.comp,
-    title: '',
-    description: '',
-    pmail: '',
-    dmail: '',
-    lcourtId: '',
-    date: '',
-    url: '',
-    report: '',
-    flag: ''
+  this.clistsService.getAllCases().snapshotChanges().subscribe({next: (data)=>{
+    this.clists=[];
+    data.forEach((item)=>{
+    let clist=item.payload.toJSON() as Icasel
+    this.clists.push({
+      key: item.key || '',
+      Case_no: clist.Case_no,
+      assign: clist.assign,
+      comp: clist.comp,
+      title: '',
+      description: '',
+      pmail: '',
+      dmail: '',
+      lcourtId: '',
+      date: '',
+      url: '',
+      report: '',
+      flag: ''
+    });
   });
-});
-console.log(this.clists);
-this.getDetails();
-},});
-}
+  console.log(this.clists);
+  this.getDetails();
+  },});
+  }
+
+
+  getAllCourts(){
+    this.clistsService.getAllCourts().snapshotChanges().subscribe({next: (data)=>{
+      this.courtLists=[];
+      data.forEach((item)=>{
+      let courtList=item.payload.toJSON() as UserData
+      if(courtList.role=="lower_user"){
+      this.courtLists.push({
+          key: item.key || '',
+          email: '',
+          role: '',
+          username: courtList.username,
+      });
+    }
+    });
+    console.log(this.courtLists);
+    },});
+    }
 public chart: any;
 
 getDetails() {

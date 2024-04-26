@@ -9,15 +9,23 @@ import { Observable } from 'rxjs/internal/Observable';
 export class ClistService {
 
   private dbPath = '/cases';
+  private dbPath2 = '/users';
+
   caseRef: AngularFireList<any>;
+  courtRef: AngularFireList<any>;
   
   constructor(private db: AngularFireDatabase){
     this.caseRef = db.list(this.dbPath);
+    this.courtRef = db.list(this.dbPath2);
     
   }
-getAllCases(){
-  return this.caseRef;
-}
+  getAllCases(){
+    return this.caseRef;
+  }
+
+  getAllCourts(){
+    return this.courtRef;
+  }
 
 getCase(key: string){
   return this.db.object(`${this.dbPath}/${key}`)
