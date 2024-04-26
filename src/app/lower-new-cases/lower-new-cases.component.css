@@ -67,7 +67,8 @@ body, h1, h2{
   }
   /* Hover effect */
   .list-group-item:hover {
-    background-color: #e0e0e0;
+    background-color: #c1b49a;
+    color: #333639;
   }
   .arrow{
     height: 50px;
