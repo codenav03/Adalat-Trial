@@ -2,25 +2,35 @@
 <app-navbar></app-navbar>
   <!--<h1>CASE LIST</h1 >-->
 
-<div class="total">
-  <h5 class="fw-bold text-dark">Total Courts : <strong>{{courtLists.length}}</strong></h5>
-</div>
-
-
-   <div class="container-main">
-    <div class="container m-5 d-flex align-items-center justify-content-between">
-      <div class="search-container">
-        <input class="form-control search-input" type="text" placeholder="Search by Cases" [(ngModel)]="searchText">
+    <div class="container box">
+      <div class="total">
+        <h5 class="fw-bold text-dark">Total Courts : <strong>{{courtLists.length}}</strong></h5>
       </div>
+      
+      
+         <div class="container-main">
+          <div class="container m-5 d-flex align-items-center justify-content-between">
+            <div class="search-container">
+              <input class="form-control search-input" type="text" placeholder="Search by Cases" [(ngModel)]="searchText">
+            </div>
+          </div>
+      
+         </div>
+  
     </div>
 
-   </div>
-  <!--@for (clist of clists; track $index| search: searchText) {  -->
-    <div class="list-group " *ngFor="let clist of courtLists | search: searchText">
-        <div  class="list-group-item list-group-item-action" >
-          <b class="d-flex align-items-center cno">{{clist.username}}</b>
-
+   
+<div class="container">
+  
+    <!--@for (clist of clists; track $index| search: searchText) {  -->
+      <div class="list-group " *ngFor="let clist of courtLists | search: searchText">
+          <div  class="list-group-item list-group-item-action" >
+            <b class="d-flex align-items-center cno">{{clist.username}}</b>
+  
+          </div>
+    
         </div>
   
-      </div>
+  
+</div>
 
