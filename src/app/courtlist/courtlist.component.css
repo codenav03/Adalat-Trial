@@ -9,6 +9,7 @@ body, h1, h2{
   }
   .total{
     display: flex;
+   
   /*float: right;
     margin-right: 70px;
     margin-top: 45px;
@@ -130,4 +131,9 @@ body, h1, h2{
 
 .space{
   width: 20cm;
+}
+
+.box{
+  display: flex;
+  justify-content: space-between;
 }
