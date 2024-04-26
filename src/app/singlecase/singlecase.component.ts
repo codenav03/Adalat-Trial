@@ -63,7 +63,7 @@ export class SinglecaseComponent {
     editCase(){
       this.router.navigate(['/caseform/' + this.caseId])
     }
-  
+
     removeCase(){
       if(window.confirm('are you sure?')){
       this.clistsService.deleteCase(this.caseId);
@@ -73,8 +73,8 @@ export class SinglecaseComponent {
   }
 
   assign(Lid:string){
-    //this.send(this.myCase?.dmail || '');
-    //this.send(this.myCase?.pmail || '');
+    this.send(this.myCase?.dmail || '');
+    this.send(this.myCase?.pmail || '');
     this.currentDate = new Date().toLocaleDateString();
     const data = {
       lcourtId: Lid,
@@ -91,11 +91,10 @@ export class SinglecaseComponent {
     let response=await emailjs.send("service_cn3r0w7","template_q7qo6nm",{
     from_name: "Adalat",
     to_name: this.myCase?.Case_no,
-    message: "your case have been assigned",
     to_email: mailid,
     });
     alert("mail has been sent");
-    
+
       }
 
 
