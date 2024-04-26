@@ -95,10 +95,7 @@ body, h1, h2{
     margin-left: 100px;
     height: 1cm;
   }
-  /* Hover effect */
-  .list-group-item:hover {
-    background-color: #e0e0e0;
-  }
+
   .arrow{
     height: 50px;
     width: 50px;
