@@ -5,7 +5,7 @@
   }
   
   .crd{
-    background-color: rgba(192, 192, 192, 0.959);
+    background-color: rgba(145, 146, 120, 0.959);
     color: white;
   }
   .but{
@@ -22,4 +22,15 @@
     min-width: 15cm;
     min-height: 9cm;
     
+  }
+
+  h2 {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    margin-bottom: 20px; /* Adjust as needed for spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
