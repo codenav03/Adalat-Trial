@@ -97,3 +97,13 @@ body, h1, h2{
   .cno{
     width: 5cm;
   }
+  .nf{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    min-height: 6cm;
+    position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  }
