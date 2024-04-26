@@ -2,7 +2,9 @@
   background-color: rgb(255, 255, 255);
   background-image: url("/assets/images/bg.jpg");
   align-items: center;
-  min-height: 900px;
+  min-height: 12cm;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   vertical-align: auto;
 }
@@ -10,6 +12,7 @@
 .crd{
   background-color: rgb(194, 180, 153);
   color: white;
+  opacity: 80%;
 }
 .but{
   background-color: rgb(42, 34, 27);
