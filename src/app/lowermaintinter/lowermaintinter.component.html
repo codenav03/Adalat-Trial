@@ -1,11 +1,20 @@
 
 <app-lowernav></app-lowernav>
-<div class="search-container">
-  <input class="form-control search-input" type="text" placeholder="Search by Cases" [(ngModel)]="searchText">
+
+<div class="container">
+  <div class="oneline">
+    <div class="total">
+      <h4 class="fw-bold text-dark"><span class="badge text-bg-dark">Total Cases : <strong>{{clists.length}}</strong></span></h4>
+    </div>
+    <div class="space"></div>
+    <div class="search-container">
+      <input class="form-control search-input" type="text" placeholder="Search by Cases" [(ngModel)]="searchText">
+    </div>
+  </div>
+ 
 </div>
-<div class="total">
-  <h4 class="fw-bold text-dark"><span class="badge text-bg-dark">Total Cases :&nbsp; <strong>{{clists.length}}</strong></span></h4>
-</div>
+
+
 <div class="container">
 
     <h2><div class="headinglist"><b class="cno">CASE NO</b><b> ASSIGNED DATE</b><b>COMPLETED</b></div></h2>
