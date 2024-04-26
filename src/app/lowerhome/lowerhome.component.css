@@ -1,7 +1,7 @@
 
   
   .crd{
-    background-color: #5a4e3cd2;
+    background-color: #6d6859d2;
     color: white;
   }
   .but{
@@ -12,6 +12,8 @@
   .contain{
     display: flex;
     justify-content: center;
+    background-image: radial-gradient(rgb(197, 193, 175),white,rgb(216, 210, 189));
+    min-height: 17cm;
   }
 
   .newlist{
@@ -29,4 +31,13 @@
     padding: 10px 0;
     margin-bottom: 20px; /* Adjust as needed for spacing */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .bottom-item {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
   }
