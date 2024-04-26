@@ -5,11 +5,12 @@ import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { CommonModule } from '@angular/common';
 import { SearchPipe } from '../search.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-lowermaintinter',
   standalone: true,
-  imports: [LowernavComponent,CommonModule,SearchPipe],
+  imports: [LowernavComponent,CommonModule,SearchPipe,FormsModule],
   templateUrl: './lowermaintinter.component.html',
   styleUrl: './lowermaintinter.component.css'
 })
