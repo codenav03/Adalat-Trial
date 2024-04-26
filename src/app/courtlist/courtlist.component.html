@@ -16,7 +16,7 @@
 
    </div>
   <!--@for (clist of clists; track $index| search: searchText) {  -->
-    <div class="list-group" *ngFor="let clist of courtLists | search: searchText">
+    <div class="list-group " *ngFor="let clist of courtLists | search: searchText">
         <div  class="list-group-item list-group-item-action" >
           <b class="d-flex align-items-center cno">{{clist.username}}</b>
 
