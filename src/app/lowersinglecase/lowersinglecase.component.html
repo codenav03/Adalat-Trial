@@ -17,10 +17,13 @@
     </div>
   </div>
   <div class="col-sm-6">
+
     <div class="card">
       <div class="card-body">
         <!--file upload -->
         <h5 class="card-title">Upload Case Details</h5>
+        @if(myCase?.comp == 'NO'){
+        
          <div>
           <input type="file" (change)="onFileSelected($event)">
           <button class="btn btn-success btn-sm" (click)="uploadFile()">Upload File</button>
@@ -37,6 +40,12 @@
           <div class="pt-5">
             <button class="btn btn-danger" (click)="closeCase()">Mark Case as Closed</button>
           </div>
+        }
+        @else {
+<img src="../../assets/images/hammer.png" alt="nothing" style="height: 5cm;">
+<h3>Case Closed!!</h3>
+
+        }
       </div>
     </div>
   </div>

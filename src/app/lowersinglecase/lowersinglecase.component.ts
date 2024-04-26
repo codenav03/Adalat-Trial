@@ -126,5 +126,6 @@ export class LowersinglecaseComponent {
 
   closeCase(){
     this.ClistService.closeCase(this.caseId);
+    alert('case is closed!!');
   }
 }
