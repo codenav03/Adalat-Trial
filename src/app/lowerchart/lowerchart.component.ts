@@ -82,7 +82,7 @@ this.chart = new Chart("MyChart", {
       data: [ pendingCasesCount, assignedCasesCount],
       backgroundColor: [
         'black',
-        'rgb(113, 121, 126)',
+        'rgb(156, 146, 121)',
 
       ],
       hoverOffset: 2

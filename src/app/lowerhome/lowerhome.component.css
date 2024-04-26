@@ -8,6 +8,11 @@
     background-color: rgb(11, 11, 11);
     color: white;
   }
+
+  .but:hover{
+    background-color: rgb(216, 206, 193);
+    color: black;
+  }
   
   .contain{
     display: flex;
