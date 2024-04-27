@@ -99,3 +99,9 @@ h2 {
   height: 50px;
   width: 50px;
 }
+
+
+.mainbody{
+  background-image: radial-gradient(rgb(197, 193, 175),white,rgb(216, 210, 189));
+  
+}

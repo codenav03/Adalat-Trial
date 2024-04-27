@@ -1,14 +1,16 @@
 <app-navbar></app-navbar>
 
-
-<div class="container" *ngIf="casesWithAssignedNo.length > 0">
-  <ul class="list-group" *ngFor="let case of casesWithAssignedNo">
-   
-      <li class="list-group-item">{{case.Case_no}}
-          <button class="btn" type="button" (click)="assignCourt(case.key!)">Assign Court</button>
-
-          
-      </li>
-    </ul>
+<div class="mainbody">
+  <div class="container" *ngIf="casesWithAssignedNo.length > 0">
+    <ul class="list-group" *ngFor="let case of casesWithAssignedNo">
+     
+        <li class="list-group-item">{{case.Case_no}}
+            <button class="btn" type="button" (click)="assignCourt(case.key!)">Assign Court</button>
+  
+            
+        </li>
+      </ul>
+  </div>
+  
 </div>
 
