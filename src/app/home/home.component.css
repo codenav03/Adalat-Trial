@@ -43,3 +43,8 @@ h3 {
   margin-bottom: 20px; /* Adjust as needed for spacing */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+.gap{
+  height: 3cm;
+}
+

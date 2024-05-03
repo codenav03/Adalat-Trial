@@ -20,11 +20,34 @@ import { LowermaintinterComponent } from './lowermaintinter/lowermaintinter.comp
 import { LowernavComponent } from './lowernav/lowernav.component';
 import { LowerpendingComponent } from './lowerpending/lowerpending.component';
 import { LowersinglecaseComponent } from './lowersinglecase/lowersinglecase.component';
+import { FooterComponent } from './units/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,MaininterComponent,NavbarComponent,SinglecaseComponent,CommonModule,PendingComponent,ChartComponent,HomeComponent,RegisterComponent,LoginComponent,AngularFireModule,FormsModule,SearchPipe,LowercaselistComponent,LowerchartComponent,LowerhomeComponent,LowermaintinterComponent,LowernavComponent,LowerpendingComponent,LowersinglecaseComponent],
+  imports: [
+    RouterOutlet,
+    MaininterComponent,
+    NavbarComponent,
+    SinglecaseComponent,
+    CommonModule,
+    PendingComponent,
+    ChartComponent,
+    HomeComponent,
+    RegisterComponent,
+    LoginComponent,
+    AngularFireModule,
+    FormsModule,
+    SearchPipe,
+    LowercaselistComponent,
+    LowerchartComponent,
+    LowerhomeComponent,
+    LowermaintinterComponent,
+    LowernavComponent,
+    LowerpendingComponent,
+    LowersinglecaseComponent,
+    FooterComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -7,6 +7,7 @@ import { NavbarComponent } from "../units/navbar/navbar.component";
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from '../search.pipe';
 import { SharedDataService } from '../shared-data.service';
+import { FooterComponent } from "../units/footer/footer.component";
 
 
 @Component({
@@ -14,7 +15,7 @@ import { SharedDataService } from '../shared-data.service';
     standalone: true,
     templateUrl: './maininter.component.html',
     styleUrl: './maininter.component.css',
-    imports: [RouterLink, RouterModule, CommonModule, NavbarComponent,FormsModule,SearchPipe]
+    imports: [RouterLink, RouterModule, CommonModule, NavbarComponent, FormsModule, SearchPipe, FooterComponent]
 })
 export class MaininterComponent implements OnInit {
   clists: Icasel[]=[];

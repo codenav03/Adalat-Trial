@@ -54,10 +54,10 @@
     align-items: center;
     min-height: 6cm;
     position: absolute;
-  bottom: 3cm;
-  left: 0;
-  right: 0;
-  opacity: 60%;
+    bottom: 3cm;
+    left: 0;
+    right: 0;
+    opacity: 60%;
   }
 
   .mainbody{

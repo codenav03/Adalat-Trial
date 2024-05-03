@@ -6,13 +6,14 @@ import { Icasel } from '../core/models/common.model';
 import { CommonModule } from '@angular/common';
 import { SearchPipe } from '../search.pipe';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from "../units/footer/footer.component";
 
 @Component({
-  selector: 'app-lowermaintinter',
-  standalone: true,
-  imports: [LowernavComponent,CommonModule,SearchPipe,FormsModule],
-  templateUrl: './lowermaintinter.component.html',
-  styleUrl: './lowermaintinter.component.css'
+    selector: 'app-lowermaintinter',
+    standalone: true,
+    templateUrl: './lowermaintinter.component.html',
+    styleUrl: './lowermaintinter.component.css',
+    imports: [LowernavComponent, CommonModule, SearchPipe, FormsModule, FooterComponent]
 })
 export class LowermaintinterComponent {
   clists: Icasel[]=[];

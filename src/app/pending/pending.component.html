@@ -1,7 +1,9 @@
 <app-navbar></app-navbar>
 
 <div class="mainbody">
+  @if(casesWithAssignedNo.length!=0){
   <div class="container" *ngIf="casesWithAssignedNo.length > 0">
+    
     <ul class="list-group" *ngFor="let case of casesWithAssignedNo">
      
         <li class="list-group-item">{{case.Case_no}}
@@ -9,8 +11,17 @@
   
             
         </li>
-      </ul>
+    </ul>
   </div>
-  
+    }
+  @else {
+    <div class="flex-column nf">
+      <img src="../../assets/images/nonew.png" alt="nothing" style="height: 2cm;  ">
+    <h5 class="pt-4">No pending cases found!!</h5>
+    </div>
+  }
+
 </div>
 
+
+<app-footer></app-footer>

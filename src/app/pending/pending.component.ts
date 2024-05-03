@@ -11,13 +11,14 @@ import { CommonModule } from '@angular/common';
 import { SharedDataService } from '../shared-data.service';
 import { ClistService } from '../core/services/clist.service';
 import { Router, RouterLink, RouterModule } from '@angular/router';
+import { FooterComponent } from "../units/footer/footer.component";
 
 @Component({
     selector: 'app-pending',
     standalone: true,
     templateUrl: './pending.component.html',
     styleUrl: './pending.component.css',
-    imports: [NavbarComponent,CommonModule,RouterLink,RouterModule]
+    imports: [NavbarComponent, CommonModule, RouterLink, RouterModule, FooterComponent]
 })
 export class PendingComponent implements OnInit{
 
