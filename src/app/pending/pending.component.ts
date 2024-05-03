@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { SharedDataService } from '../shared-data.service';
 import { ClistService } from '../core/services/clist.service';
 import { Router, RouterLink, RouterModule } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
     selector: 'app-pending',
@@ -40,7 +41,12 @@ export class PendingComponent implements OnInit{
   constructor(
     private clistsService: ClistService,
     private sharedDataService: SharedDataService,
-    private router: Router){
+    private router: Router,
+    private authService: AuthService,){
+      if (!this.authService.isLoggedIn()) {
+        // If not logged in, navigate to login page
+        this.router.navigate(['/']);
+      }
 
   }
   ngOnInit(): void {

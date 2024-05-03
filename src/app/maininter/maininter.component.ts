@@ -7,6 +7,7 @@ import { NavbarComponent } from "../units/navbar/navbar.component";
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from '../search.pipe';
 import { SharedDataService } from '../shared-data.service';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -18,7 +19,11 @@ import { SharedDataService } from '../shared-data.service';
 })
 export class MaininterComponent implements OnInit {
   clists: Icasel[]=[];
-  constructor(private clistsService: ClistService,private router: Router){
+  constructor(private clistsService: ClistService,private router: Router,private authService: AuthService,){
+    if (!this.authService.isLoggedIn()) {
+      // If not logged in, navigate to login page
+      this.router.navigate(['/']);
+    }
 
   }
   ngOnInit(): void {

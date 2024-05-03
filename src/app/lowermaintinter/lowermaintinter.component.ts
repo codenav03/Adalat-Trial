@@ -6,6 +6,7 @@ import { Icasel } from '../core/models/common.model';
 import { CommonModule } from '@angular/common';
 import { SearchPipe } from '../search.pipe';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-lowermaintinter',
@@ -17,7 +18,11 @@ import { FormsModule } from '@angular/forms';
 export class LowermaintinterComponent {
   clists: Icasel[]=[];
 
-  constructor(private clistsService: ClistService,private router: Router){
+  constructor(private clistsService: ClistService,private router: Router,private authService: AuthService,){
+    if (!this.authService.isLoggedIn()) {
+      // If not logged in, navigate to login page
+      this.router.navigate(['/']);
+    }
 
   }
   ngOnInit(): void {

@@ -9,6 +9,7 @@ import { Icasel,UserData } from '../core/models/common.model';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LcourtService } from '../core/services/lcourt.service';
 import { FileService } from '../core/services/file.service';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -32,7 +33,12 @@ export class SinglecaseComponent {
       private activatedRoute: ActivatedRoute,
       private router: Router,
       private fileService: FileService,
+      private authService: AuthService,
     ){
+      if (!this.authService.isLoggedIn()) {
+        // If not logged in, navigate to login page
+        this.router.navigate(['/']);
+      }
 
     }
     ngOnInit(): void {

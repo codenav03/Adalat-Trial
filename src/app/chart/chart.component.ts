@@ -6,6 +6,7 @@ import { Icasel } from '../core/models/common.model';
 import { ClistService } from '../core/services/clist.service';
 import { Router } from '@angular/router';
 import { SharedDataService } from '../shared-data.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-chart',
@@ -19,12 +20,17 @@ clists: Icasel[]=[];
 casesWithAssignedNo: Icasel[] = [];
 
 
-constructor(private clistsService: ClistService,private router: Router,private sharedDataService: SharedDataService){
+constructor(private clistsService: ClistService,private router: Router,private sharedDataService: SharedDataService,private authService: AuthService,){
+  if (!this.authService.isLoggedIn()) {
+    // If not logged in, navigate to login page
+    this.router.navigate(['/']);
+  }
 
 }
 
 
 ngOnInit(): void {
+
 this.getAllCases();
 
 
