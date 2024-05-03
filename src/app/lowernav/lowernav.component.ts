@@ -16,4 +16,8 @@ export class LowernavComponent {
    this.authService.logout();
    this.router.navigateByUrl('/');
   }
+
+  isActiveRoute(route: string): boolean {
+    return this.router.url === route;
+  }
 }

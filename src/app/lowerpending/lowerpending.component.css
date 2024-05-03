@@ -1,5 +1,6 @@
 .container{
     padding: 40px;
+   
   }
   
   .btn{
@@ -57,4 +58,10 @@
   left: 0;
   right: 0;
   opacity: 60%;
+  }
+
+  .mainbody{
+    background-image: radial-gradient(rgb(197, 193, 175),white,rgb(216, 210, 189));
+    background-size: cover;
+    min-height: 16cm;
   }
