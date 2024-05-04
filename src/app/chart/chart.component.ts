@@ -68,8 +68,8 @@ console.log(pendingCasesCount);
 const assignedCasesCount = this.clists.length - pendingCasesCount;
 console.log(assignedCasesCount);
 this.chart = new Chart("MyChart", {
-  type: 'pie',
-  // type: 'doughnut',
+  //type: 'pie',
+  type: 'doughnut',
   data: {
     labels: [
       'Pending',

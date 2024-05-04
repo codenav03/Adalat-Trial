@@ -5,6 +5,7 @@ import { Icasel, UserData } from '../core/models/common.model';
 import { ClistService } from '../core/services/clist.service';
 import { Router } from '@angular/router';
 import { SharedDataService } from '../shared-data.service';
+import { FooterComponent } from "../units/footer/footer.component";
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { AuthService } from '../auth.service';
     standalone: true,
     templateUrl: './home.component.html',
     styleUrl: './home.component.css',
-    imports: [ChartComponent, NavbarComponent]
+    imports: [ChartComponent, NavbarComponent, FooterComponent]
 })
 export class HomeComponent {
   clists: Icasel[]=[];

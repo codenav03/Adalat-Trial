@@ -6,14 +6,15 @@ import { Icasel } from '../core/models/common.model';
 import { ClistService } from '../core/services/clist.service';
 import { Router } from '@angular/router';
 import { SharedDataService } from '../shared-data.service';
+import { FooterComponent } from "../units/footer/footer.component";
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-lowerhome',
-  standalone: true,
-  imports: [LowernavComponent,LowerchartComponent,LowerNewCasesComponent],
-  templateUrl: './lowerhome.component.html',
-  styleUrl: './lowerhome.component.css'
+    selector: 'app-lowerhome',
+    standalone: true,
+    templateUrl: './lowerhome.component.html',
+    styleUrl: './lowerhome.component.css',
+    imports: [LowernavComponent, LowerchartComponent, LowerNewCasesComponent, FooterComponent]
 })
 export class LowerhomeComponent {
   clists: Icasel[]=[];

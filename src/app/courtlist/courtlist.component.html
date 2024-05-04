@@ -12,15 +12,25 @@
     </div>
   </div>
 
- 
+  
   <div class="container"> 
+    @if(courtLists.length!=0){
   <!--@for (clist of clists; track $index| search: searchText) {  -->
     <div class="list-group " *ngFor="let clist of courtLists | search: searchText">
         <div  class="list-group-item list-group-item-action" >
           <b class="d-flex align-items-center cno">{{clist.username}}</b>
         </div>
       </div> 
+    }
+    @else {
+      <div class="flex-column nf">
+        <img src="../../assets/images/nonew.png" alt="nothing" style="height: 2cm;  ">
+      <h5 class="pt-4">No courts found!!</h5>
+      </div>
+    }
   </div>
 
 
 </div>
+
+<app-footer></app-footer>

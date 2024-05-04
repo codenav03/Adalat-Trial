@@ -4,14 +4,15 @@ import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { FooterComponent } from "../units/footer/footer.component";
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-lowerpending',
-  standalone: true,
-  imports: [LowernavComponent,CommonModule],
-  templateUrl: './lowerpending.component.html',
-  styleUrl: './lowerpending.component.css'
+    selector: 'app-lowerpending',
+    standalone: true,
+    templateUrl: './lowerpending.component.html',
+    styleUrl: './lowerpending.component.css',
+    imports: [LowernavComponent, CommonModule, FooterComponent]
 })
 export class LowerpendingComponent {
 

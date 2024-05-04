@@ -18,3 +18,15 @@
   background-image: radial-gradient(rgb(197, 193, 175),white,rgb(216, 210, 189));
   height:600px;
 }
+
+.nf{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  min-height: 6cm;
+  position: absolute;
+bottom: 3cm;
+left: 0;
+right: 0;
+opacity: 60%;
+}
