@@ -22,8 +22,11 @@ export class CourtlistComponent {
 
 
   constructor(private clistsService: ClistService,private authService: AuthService,private router: Router){
-   
 
+    if(!authService.isLoggedIn())
+      {
+        this.router.navigateByUrl('/');
+      }
   }
 
   ngOnInit(): void {

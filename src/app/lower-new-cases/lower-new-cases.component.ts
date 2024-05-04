@@ -18,8 +18,11 @@ export class LowerNewCasesComponent {
   clists: Icasel[]=[];
 
   constructor(private clistsService: ClistService,private authService: AuthService,private router: Router){
-    
 
+    if(!authService.isLoggedIn())
+      {
+        this.router.navigateByUrl('/');
+      }
   }
   ngOnInit(): void {
       this.getAllCases();

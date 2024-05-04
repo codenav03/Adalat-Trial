@@ -22,7 +22,10 @@ export class LowerhomeComponent {
   pendingcasesCount: number=0;
   completedcasesCount: number=0;
   constructor(private clistsService: ClistService,private router: Router,private sharedDataService: SharedDataService,private authService: AuthService){
-
+    if(!authService.isLoggedIn())
+      {
+        this.router.navigateByUrl('/');
+      }
   }
 
 

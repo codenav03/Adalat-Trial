@@ -23,7 +23,7 @@ export class FileuploadComponent {
     private fileService: FileService,
     private ClistService: ClistService,
     private activatedRoute: ActivatedRoute,private authService: AuthService,private router: Router){
-     
+      
 
     }
 

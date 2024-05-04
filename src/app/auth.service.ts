@@ -1,6 +1,6 @@
 import { Injectable, inject, signal } from "@angular/core";
 import { Auth, user } from "@angular/fire/auth";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { User, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { Observable, filter, from, map } from "rxjs";
 import { UserInterface } from "./user.interface";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
@@ -50,13 +50,19 @@ export class AuthService{
 }*/
 
 private isAuthenticated: boolean = false;
+private currentUser: User | null = null;
   firebaseAuth=inject(Auth);
   user$=user(this.firebaseAuth);
   currentUserSig= signal<UserInterface | null | undefined>(undefined);
   constructor(
     private db: AngularFireDatabase,
     private LcourtService: LcourtService,
-  ){}
+  ){ this.isAuthenticated = !!localStorage.getItem('authToken');
+  // Subscribe to auth state changes
+  this.firebaseAuth.onAuthStateChanged(user => {
+    this.isAuthenticated = !!user;
+    this.currentUser = user;
+  });}
 
 
 
@@ -95,6 +101,8 @@ private isAuthenticated: boolean = false;
       email,
       password,
     ).then((data)=>{this.isAuthenticated = true;
+      this.currentUser = data.user;
+      localStorage.setItem('authToken', 'true');
       console.log("freak penne",data.user.uid);
       console.log("User logged in. isAuthenticated:", this.isAuthenticated);
       localStorage.setItem("lcourtId",data.user.uid);
@@ -106,6 +114,8 @@ private isAuthenticated: boolean = false;
   logout(): Observable<void>{
     const promise =signOut(this.firebaseAuth);
     this.isAuthenticated = false;
+    this.currentUser = null;
+          localStorage.removeItem('authToken');
     return from(promise);
 
   }

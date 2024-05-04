@@ -44,8 +44,11 @@ export class PendingComponent implements OnInit{
     private sharedDataService: SharedDataService,
     private router: Router,
     private authService: AuthService,){
-      
 
+      if(!authService.isLoggedIn())
+        {
+          this.router.navigateByUrl('/');
+        }
   }
   ngOnInit(): void {
       this.getAllCases();

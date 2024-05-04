@@ -22,7 +22,10 @@ export class LowerpendingComponent {
     private router: Router,
     private authService: AuthService,
   ){
-    
+    if(!authService.isLoggedIn())
+      {
+        this.router.navigateByUrl('/');
+      }
 
   }
   ngOnInit(): void {

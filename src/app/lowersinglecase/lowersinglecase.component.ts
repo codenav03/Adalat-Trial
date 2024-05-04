@@ -35,8 +35,11 @@ export class LowersinglecaseComponent {
     private fileService: FileService,
     private authService: AuthService,
   ){
-    
 
+    if(!authService.isLoggedIn())
+      {
+        this.router.navigateByUrl('/');
+      }
   }
  ngOnInit(): void {
     this.activatedRoute.params.subscribe({

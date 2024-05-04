@@ -20,8 +20,11 @@ export class LowermaintinterComponent {
   clists: Icasel[]=[];
 
   constructor(private clistsService: ClistService,private router: Router,private authService: AuthService,){
-    
 
+     if(!authService.isLoggedIn())
+      {
+        this.router.navigateByUrl('/');
+      }
   }
   ngOnInit(): void {
       this.getAllCases();

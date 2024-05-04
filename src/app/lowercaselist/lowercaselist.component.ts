@@ -12,7 +12,10 @@ import { Router } from '@angular/router';
 })
 export class LowercaselistComponent {
   constructor(private authService: AuthService, private router: Router) {
- 
+    if(!authService.isLoggedIn())
+      {
+        this.router.navigateByUrl('/');
+      }
   }
 
 }
