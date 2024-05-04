@@ -48,16 +48,17 @@ export class AuthService{
     })
   }
 }*/
+
 private isAuthenticated: boolean = false;
   firebaseAuth=inject(Auth);
   user$=user(this.firebaseAuth);
   currentUserSig= signal<UserInterface | null | undefined>(undefined);
   constructor(
     private db: AngularFireDatabase,
-    private LcourtService: LcourtService, 
+    private LcourtService: LcourtService,
   ){}
 
-  
+
 
   register(
     email: string,
@@ -80,7 +81,7 @@ private isAuthenticated: boolean = false;
 
     };
 
-    
+
     return from(promise);
   }
 
@@ -95,10 +96,10 @@ private isAuthenticated: boolean = false;
       password,
     ).then((data)=>{this.isAuthenticated = true;
       console.log("freak penne",data.user.uid);
+      console.log("User logged in. isAuthenticated:", this.isAuthenticated);
       localStorage.setItem("lcourtId",data.user.uid);
       //console.log("edi penne",localStorage.getItem("lcourtId") || '');
     });
-
     return from(promise);
 
   }
@@ -109,6 +110,7 @@ private isAuthenticated: boolean = false;
 
   }
   isLoggedIn(): boolean {
+     console.log("isLoggedIn called. isAuthenticated:", this.isAuthenticated);
     return this.isAuthenticated;
   }
   getUserRole(uid: string): Observable<string> {
@@ -120,6 +122,6 @@ private isAuthenticated: boolean = false;
       );
   }
 
-  
+
 }
 

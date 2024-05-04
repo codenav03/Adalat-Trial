@@ -35,10 +35,7 @@ export class LowersinglecaseComponent {
     private fileService: FileService,
     private authService: AuthService,
   ){
-    if (!this.authService.isLoggedIn()) {
-      // If not logged in, navigate to login page
-      this.router.navigate(['/']);
-    }
+    
 
   }
  ngOnInit(): void {

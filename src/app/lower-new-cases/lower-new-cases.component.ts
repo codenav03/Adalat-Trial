@@ -18,10 +18,7 @@ export class LowerNewCasesComponent {
   clists: Icasel[]=[];
 
   constructor(private clistsService: ClistService,private authService: AuthService,private router: Router){
-    if (!this.authService.isLoggedIn()) {
-      // If not logged in, navigate to login page
-      this.router.navigate(['/']);
-    }
+    
 
   }
   ngOnInit(): void {

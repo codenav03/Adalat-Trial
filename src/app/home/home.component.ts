@@ -22,11 +22,8 @@ pendingcasesCount: number=0;
 assignedcasesCount: number=0;
 
 constructor(private clistsService: ClistService,private authService: AuthService,private router: Router,private sharedDataService: SharedDataService){
-  
-  if (!this.authService.isLoggedIn()) {
-    // If not logged in, navigate to login page
-    this.router.navigate(['/']);
-  }
+
+ 
 }
 
 

@@ -25,10 +25,7 @@ export class CaseformComponent {
      private router: Router,
      private activatedRoute: ActivatedRoute,private authService: AuthService,
      ) {
-      if (!this.authService.isLoggedIn()) {
-        // If not logged in, navigate to login page
-        this.router.navigate(['/']);
-      }
+     
 
     this.caseForm = this.fb.group({
       Case_no: new FormControl("",[Validators.required]),

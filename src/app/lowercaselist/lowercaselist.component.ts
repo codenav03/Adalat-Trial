@@ -12,11 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LowercaselistComponent {
   constructor(private authService: AuthService, private router: Router) {
-    // Check if user is logged in when the component is constructed
-    if (!this.authService.isLoggedIn()) {
-      // If not logged in, navigate to login page
-      this.router.navigate(['/']);
-    }
+ 
   }
 
 }
