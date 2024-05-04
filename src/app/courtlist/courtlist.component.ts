@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { SearchPipe } from '../search.pipe';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from "../units/footer/footer.component";
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-courtlist',
@@ -19,17 +21,21 @@ export class CourtlistComponent {
   searchText:string = '';
 
 
-  constructor(private clistsService: ClistService){
+  constructor(private clistsService: ClistService,private authService: AuthService,private router: Router){
+    if (!this.authService.isLoggedIn()) {
+      // If not logged in, navigate to login page
+      this.router.navigate(['/']);
+    }
 
   }
 
   ngOnInit(): void {
     this.getAllCourts();
-    
+
     }
   getAllCourts(){
 
-    
+
 
     this.clistsService.getAllCourts().snapshotChanges().subscribe({next: (data)=>{
       this.courtLists=[];

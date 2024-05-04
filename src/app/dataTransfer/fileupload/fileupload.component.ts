@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { AngularFireStorage } from "@angular/fire/compat/storage"
 import { FileService } from '../../core/services/file.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ClistService } from '../../core/services/clist.service';
+import { AuthService } from '../../auth.service';
 
 
 @Component({
@@ -15,13 +16,19 @@ import { ClistService } from '../../core/services/clist.service';
 export class FileuploadComponent {
   title = 'fileupload';
   caseId = '';
-  selectedFile: File | null = null; 
+  selectedFile: File | null = null;
 
   constructor(
     private fireStorage:AngularFireStorage,
     private fileService: FileService,
     private ClistService: ClistService,
-    private activatedRoute: ActivatedRoute,){}
+    private activatedRoute: ActivatedRoute,private authService: AuthService,private router: Router){
+      if (!this.authService.isLoggedIn()) {
+        // If not logged in, navigate to login page
+        this.router.navigate(['/']);
+      }
+
+    }
 
    /*async onFileChange(event:any){
     const file = event.target.files[0]
@@ -62,7 +69,7 @@ export class FileuploadComponent {
         console.error('No file selected.');
       }
     }
-  
+
    /* uploadFile(file: File) {
       this.fileService.uploadFile(file,'caseFile')
         .then(downloadUrl => {

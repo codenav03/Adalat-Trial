@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lower-new-cases',
@@ -15,7 +17,11 @@ export class LowerNewCasesComponent {
 
   clists: Icasel[]=[];
 
-  constructor(private clistsService: ClistService){
+  constructor(private clistsService: ClistService,private authService: AuthService,private router: Router){
+    if (!this.authService.isLoggedIn()) {
+      // If not logged in, navigate to login page
+      this.router.navigate(['/']);
+    }
 
   }
   ngOnInit(): void {

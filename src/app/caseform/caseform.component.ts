@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-caseform',
@@ -20,10 +21,15 @@ export class CaseformComponent {
 
   constructor(
     private fb: FormBuilder,
-     private ClistService: ClistService, 
+     private ClistService: ClistService,
      private router: Router,
-     private activatedRoute: ActivatedRoute
+     private activatedRoute: ActivatedRoute,private authService: AuthService,
      ) {
+      if (!this.authService.isLoggedIn()) {
+        // If not logged in, navigate to login page
+        this.router.navigate(['/']);
+      }
+
     this.caseForm = this.fb.group({
       Case_no: new FormControl("",[Validators.required]),
       title: new FormControl("",[Validators.required]),
@@ -36,19 +42,20 @@ export class CaseformComponent {
   }
 
   ngOnInit(): void {
+
     this.activatedRoute.params.subscribe({
       next:(params) => {
         if(this.CaseId!=='' || params['id']!=='null' && params['id'] !== undefined){
           this.CaseId = params['id'];
           }
         this.getCase(this.CaseId);
-        
-        
+
+
       },
     });
   }
 
-  
+
 
   OnSubmit(){
     if(this.caseForm.valid){

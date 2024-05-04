@@ -6,6 +6,7 @@ import { ClistService } from '../core/services/clist.service';
 import { Router } from '@angular/router';
 import { SharedDataService } from '../shared-data.service';
 import { FooterComponent } from "../units/footer/footer.component";
+import { AuthService } from '../auth.service';
 
 @Component({
     selector: 'app-home',
@@ -21,8 +22,12 @@ casesWithAssignedNo: Icasel[] = [];
 pendingcasesCount: number=0;
 assignedcasesCount: number=0;
 
-constructor(private clistsService: ClistService,private router: Router,private sharedDataService: SharedDataService){
-
+constructor(private clistsService: ClistService,private authService: AuthService,private router: Router,private sharedDataService: SharedDataService){
+  
+  if (!this.authService.isLoggedIn()) {
+    // If not logged in, navigate to login page
+    this.router.navigate(['/']);
+  }
 }
 
 

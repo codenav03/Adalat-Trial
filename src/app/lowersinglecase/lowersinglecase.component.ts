@@ -10,6 +10,7 @@ import emailjs from '@emailjs/browser';
 import { LcourtService } from '../core/services/lcourt.service';
 import { LowernavComponent } from "../lowernav/lowernav.component";
 import { FileService } from '../core/services/file.service';
+import { AuthService } from '../auth.service';
 @Component({
     selector: 'app-lowersinglecase',
     standalone: true,
@@ -22,7 +23,7 @@ export class LowersinglecaseComponent {
   courtlist: UserData[]=[];
   caseId = '';
   myCase: Icasel | null = null; // Initialize myCase
-  selectedFile: File | null = null; 
+  selectedFile: File | null = null;
 
 
   constructor(
@@ -32,7 +33,12 @@ export class LowersinglecaseComponent {
     private ClistService: ClistService,
     private router: Router,
     private fileService: FileService,
+    private authService: AuthService,
   ){
+    if (!this.authService.isLoggedIn()) {
+      // If not logged in, navigate to login page
+      this.router.navigate(['/']);
+    }
 
   }
  ngOnInit(): void {

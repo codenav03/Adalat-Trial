@@ -5,6 +5,7 @@ import { Icasel } from '../core/models/common.model';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { FooterComponent } from "../units/footer/footer.component";
+import { AuthService } from '../auth.service';
 
 @Component({
     selector: 'app-lowerpending',
@@ -19,7 +20,12 @@ export class LowerpendingComponent {
   constructor(
     private clistsService: ClistService,
     private router: Router,
+    private authService: AuthService,
   ){
+    if (!this.authService.isLoggedIn()) {
+      // If not logged in, navigate to login page
+      this.router.navigate(['/']);
+    }
 
   }
   ngOnInit(): void {
@@ -33,7 +39,7 @@ export class LowerpendingComponent {
       let clist=item.payload.toJSON() as Icasel
       const lId = localStorage.getItem("lcourtId");
     console.log("freak penne",lId);
-    
+
     if(clist.lcourtId==lId && clist.comp=="NO"){
       this.clists.push({
         key: item.key || '',
@@ -59,5 +65,5 @@ export class LowerpendingComponent {
   singleCase(key:string) {
     this.router.navigate(['/lowersinglecase/' + key])
     }
-  
+
 }
