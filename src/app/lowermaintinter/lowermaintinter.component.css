@@ -59,28 +59,6 @@ body, h1, h2{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
-  /* Case list container */
-  /*.list-group {
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;  Adjust as needed
-  }*/
-
-  /* Case list items */
-  /*.list-group-item {
-    padding: 10px;
-    background-color: #ddd;
-    border: 1px solid rgb(49, 44, 44);
-    margin-bottom: 30px;
-    color: #333;
-    text-decoration: none;
-      word-spacing: 0px;
-      display: flex;
-      align-items: center;
-      align-content: space-between;
-
-
-  }*/
   .list-group-item list-group-item-action{
     display: flex;
     align-items: center;
@@ -119,10 +97,10 @@ body, h1, h2{
   display: flex;
   justify-content: center;
   
+  
+  
 }
-.container{
-  margin-top: 1.5cm;
-}
+
 
 .space{
   width: 20cm;
@@ -131,4 +109,26 @@ body, h1, h2{
   background-image: radial-gradient(rgb(197, 193, 175),white,rgb(216, 210, 189));
   background-size: cover;
   min-height: 16cm;
+}
+
+.nf{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  min-height: 6cm;
+  position: absolute;
+  bottom: 3cm;
+  left: 0;
+  right: 0;
+  opacity: 60%;
+}
+
+
+.container{
+  min-height: 16cm;
+  
+}
+
+.top{
+  height: 1.5cm;
 }
