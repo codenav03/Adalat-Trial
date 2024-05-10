@@ -5,14 +5,15 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { CommonModule } from '@angular/common';
 import { LcourtService } from '../core/services/lcourt.service';
+import { AdminnavComponent } from "../adminnav/adminnav.component";
 
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [ReactiveFormsModule,CommonModule],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+    selector: 'app-register',
+    standalone: true,
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.css',
+    imports: [ReactiveFormsModule, CommonModule, AdminnavComponent]
 })
 export class RegisterComponent {
 

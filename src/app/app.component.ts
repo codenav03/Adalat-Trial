@@ -21,6 +21,7 @@ import { LowernavComponent } from './lowernav/lowernav.component';
 import { LowerpendingComponent } from './lowerpending/lowerpending.component';
 import { LowersinglecaseComponent } from './lowersinglecase/lowersinglecase.component';
 import { FooterComponent } from './units/footer/footer.component';
+import { AdminnavComponent } from './adminnav/adminnav.component';
 
 @Component({
   selector: 'app-root',
@@ -46,7 +47,8 @@ import { FooterComponent } from './units/footer/footer.component';
     LowernavComponent,
     LowerpendingComponent,
     LowersinglecaseComponent,
-    FooterComponent
+    FooterComponent,
+    AdminnavComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
