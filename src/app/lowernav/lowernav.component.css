@@ -12,4 +12,16 @@
   .bg-very-dark {
     background-color: #000; /* Black color */
 }
+.hwr:hover{
+  color: #d1c18c;
+}
+.nav-link{
+ 
+  font-weight: bold;
+}
 
+
+.activeLink{
+  color: rgb(236, 187, 61);
+  
+}

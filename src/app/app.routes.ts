@@ -5,32 +5,31 @@ import { PendingComponent } from './pending/pending.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-
-import { LowerhomeComponent } from './lowerhome/lowerhome.component';
-import { LowernavComponent } from './lowernav/lowernav.component';
-import { LowerpendingComponent } from './lowerpending/lowerpending.component';
-import { LowercaselistComponent } from './lowercaselist/lowercaselist.component';
-import { lowermaininter } from './lowermaininter/lowermaininter.component';
-
 import { CaseformComponent } from './caseform/caseform.component';
 import { AuthGuard } from './auth.guard';
-
+import { LowercaselistComponent } from './lowercaselist/lowercaselist.component';
+import { LowerchartComponent } from './lowerchart/lowerchart.component';
+import { LowerhomeComponent } from './lowerhome/lowerhome.component';
+import { LowermaintinterComponent } from './lowermaintinter/lowermaintinter.component';
+import { LowerpendingComponent } from './lowerpending/lowerpending.component';
+import { LowersinglecaseComponent } from './lowersinglecase/lowersinglecase.component';
+import { CourtlistComponent } from './courtlist/courtlist.component';
 
 export const routes: Routes = [
- 
+  {path: 'home',component: HomeComponent},
   {path: 'maininter',component: MaininterComponent},
-
-  {path:'home',component:HomeComponent}, 
-  {path: 'lowerhome',component: LowerhomeComponent},
-  {path:'lowercaselist',component:LowercaselistComponent},
-  {path: 'lowerpending',component: LowerpendingComponent},
-  {path: 'lowermaininter',component: lowermaininter},
-  {path:'',component:LowerhomeComponent},
-
-  {path: 'singlecase/:caseNo/:dmailid',component: SinglecaseComponent},
+  {path: 'singlecase/:id',component: SinglecaseComponent},
   {path: 'pending',component: PendingComponent},
   {path: 'register',component:RegisterComponent,canActivate:[AuthGuard]},
   {path: 'caseform', component:CaseformComponent},
+  {path: 'caseform/:id', component:CaseformComponent},
   {path:'',component:LoginComponent},
+  {path:'lowercaselist',component:LowercaselistComponent},
+  {path:'lowerchart',component:LowerchartComponent},
+  {path:'lowerhome',component:LowerhomeComponent},
+  {path:'lowermaininter',component:LowermaintinterComponent},
+  {path:'lowerpending',component:LowerpendingComponent},
+  {path:'lowersinglecase/:id',component:LowersinglecaseComponent},
+  {path:'courtlist',component:CourtlistComponent},
 
 ];

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { LowernavComponent } from '../lowernav/lowernav.component';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lowercaselist',
@@ -9,5 +11,11 @@ import { LowernavComponent } from '../lowernav/lowernav.component';
   styleUrl: './lowercaselist.component.css'
 })
 export class LowercaselistComponent {
+  constructor(private authService: AuthService, private router: Router) {
+    if(!authService.isLoggedIn())
+      {
+        this.router.navigateByUrl('/');
+      }
+  }
 
 }

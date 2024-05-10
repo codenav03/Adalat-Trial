@@ -1,27 +1,31 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Router,RouterLink, RouterModule } from '@angular/router';
 import { ClistService } from '../core/services/clist.service';
 import { Icasel } from '../core/models/common.model';
 import { NavbarComponent } from "../units/navbar/navbar.component";
-
-import { LowernavComponent } from '../lowernav/lowernav.component';
-
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from '../search.pipe';
 import { SharedDataService } from '../shared-data.service';
+import { FooterComponent } from "../units/footer/footer.component";
+import { AuthService } from '../auth.service';
+
 
 @Component({
     selector: 'app-maininter',
     standalone: true,
     templateUrl: './maininter.component.html',
     styleUrl: './maininter.component.css',
-    imports: [RouterLink, RouterModule, CommonModule, NavbarComponent,FormsModule,SearchPipe]
+    imports: [RouterLink, RouterModule, CommonModule, NavbarComponent, FormsModule, SearchPipe, FooterComponent]
 })
 export class MaininterComponent implements OnInit {
   clists: Icasel[]=[];
-  constructor(private clistsService: ClistService){
+  constructor(private clistsService: ClistService,private router: Router,private authService: AuthService,){
 
+    if(!authService.isLoggedIn())
+      {
+        this.router.navigateByUrl('/');
+      }
   }
   ngOnInit(): void {
       this.getAllCases();
@@ -36,11 +40,25 @@ getAllCases(){
       Case_no: clist.Case_no,
       assign: clist.assign,
       comp: clist.comp,
-      dmail_id:clist.dmail_id,
+      description: clist.description,
+      title: clist.title,
+      pmail: '',
+      dmail: '',
+      lcourtId: '',
+      date: '',
+      url: '',
+      report: '',
+      flag: ''
     });
   });
   },});
 }
+
+singleCase(key: string){
+  this.router.navigate(['/singlecase/'+ key])
+}
+
+
 searchText='';
 
 }

@@ -1,57 +1,62 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { CommonModule } from '@angular/common';
+import { LcourtService } from '../core/services/lcourt.service';
+import { AdminnavComponent } from "../adminnav/adminnav.component";
+
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [ReactiveFormsModule,CommonModule],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+    selector: 'app-register',
+    standalone: true,
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.css',
+    imports: [ReactiveFormsModule, CommonModule, AdminnavComponent]
 })
 export class RegisterComponent {
-  /*email: string ='';
-  password: string ='';
-  constructor(private auth:AuthService){ }
-  ngOnInit(): void {
 
-  }
-  register(){
-    if(this.email==''){
-      alert('please enter email');
-      return;
-  }
-  if(this.password==''){
-    alert('please enter password');
-    return;
-  }
-  this.auth.register(this.email,this.password);
-  this.email='';
-  this.password='';
-}
-}*/
-  fb=inject(FormBuilder);
+
   http=inject(HttpClient);
   authService=inject(AuthService);
   router=inject(Router);
+  courtForm !: FormGroup;
+  roles = ['higher_user', 'lower_user'];
+  uid: string = '';
 
-  form=this.fb.nonNullable.group({
+
+  constructor(
+    private fb: FormBuilder,
+    private LcourtService: LcourtService,
+  ){
+  this.courtForm=this.fb.nonNullable.group({
     username: ['',Validators.required],
     email: ['',Validators.required],
     password: ['',Validators.required],
+    role: ['',Validators.required],
   });
+}
   errorMessage: string | null=null;
-  onSubmit(): void{
-    const rawForm=this.form.getRawValue();
-    this.authService.register(rawForm.email,rawForm.username,rawForm.password).subscribe({ next:()=>{
-      this.router.navigateByUrl('/lowerhome');
+
+
+
+  onSubmit(): void{ console.log('called');
+    const rawForm=this.courtForm.getRawValue();
+
+    this.authService.register(rawForm.email,rawForm.username,rawForm.password,rawForm.role).subscribe({ next:()=>{
+
+      this.router.navigateByUrl('/register');
     },
     error: (err)=>{
       this.errorMessage=err.code;
     },
+
     });
+   /* this.uid = this.authService.getUid();
+    console.log("uid register inside:",this.uid);
+    //this.LcourtService.addCourt(this.courtForm.value,"88888");
+    console.log('court details send');*/
   }
+
 }

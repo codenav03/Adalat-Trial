@@ -1,5 +1,6 @@
 .container{
     padding: 40px;
+   
   }
   
   .btn{
@@ -13,3 +14,54 @@
     color: white;
   }
   
+
+  .eachlist{
+    display: flex;
+    
+  }
+
+  .listhead{
+    display: flex;
+    
+  }
+
+  h2 {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    margin-bottom: 20px; /* Adjust as needed for spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .cno{
+    width: 5cm;
+  }
+
+  .space{
+    width: 12cm;
+  }
+
+  .space1{
+    width: 9cm;
+  }
+
+  .nf{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    min-height: 6cm;
+    position: absolute;
+    bottom: 3cm;
+    left: 0;
+    right: 0;
+    opacity: 60%;
+  }
+
+  .mainbody{
+    background-image: radial-gradient(rgb(197, 193, 175),white,rgb(216, 210, 189));
+    background-size: cover;
+    min-height: 16cm;
+  }

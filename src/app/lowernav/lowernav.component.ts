@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-lowernav',
@@ -17,7 +17,7 @@ export class LowernavComponent {
    this.router.navigateByUrl('/');
   }
 
-  isLoggedIn(): boolean {
-    return this.authService.isLoggedIn(); // Implement this method in your AuthService
+  isActiveRoute(route: string): boolean {
+    return this.router.url === route;
   }
 }

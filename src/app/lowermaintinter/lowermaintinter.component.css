@@ -2,12 +2,34 @@
 body, h1, h2{
     margin: 0;
     padding: 0;
+    
   }
   .list-group-item{
     background-color: rgb(51, 51, 51);
     color: white;
   }
-  /* Center align h1 */
+  .total{
+    display: flex;
+ 
+  }
+  
+  .search-container {
+    display: flex;
+    width: 260px;
+
+  }
+
+
+  .search-input {
+    flex: 1;
+    align-content: center;
+    padding: 5px;
+    border: 2px solid rgb(51, 51, 51);
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+
+  }
   h1 {
     text-align: center;
     margin-top: 0px; /* Adjust as needed for spacing */
@@ -19,6 +41,12 @@ body, h1, h2{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Drop shadow */
   }
   /* Adjust spacing between words in h2 */
+  .badge{
+    padding: 10px;
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   h2 {
     font-family: Arial, sans-serif;
     font-size: 18px;
@@ -26,37 +54,17 @@ body, h1, h2{
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 10px 0;
+    margin-top: 50px;
     margin-bottom: 20px; /* Adjust as needed for spacing */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
-  
-  /* Case list container */
-  .list-group {
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%; /* Adjust as needed */
-  }
-  
-  /* Case list items */
-  /*.list-group-item {
-    padding: 10px;
-    background-color: #ddd;
-    border: 1px solid rgb(49, 44, 44);
-    margin-bottom: 30px;
-    color: #333;
-    text-decoration: none;
-      word-spacing: 0px;
-      display: flex;
-      align-items: center;
-      align-content: space-between;
-  
-  
-  }*/
+
   .list-group-item list-group-item-action{
     display: flex;
     align-items: center;
     align-content: space-between;
     margin-left: 100px;
+    height: 1cm;
   }
   /* Hover effect */
   .list-group-item:hover {
@@ -66,4 +74,61 @@ body, h1, h2{
     height: 50px;
     width: 50px;
   }
+
+  .list-group-item,.list-group-item-action{
+    display: flex;
+    justify-content: space-between;
+  }
+  .headinglist{
+    display: flex;
+    justify-content: space-between;
+    
+
+  }
+  .new{
+    color: rgb(206, 199, 5);
+    height: .5cm;
+  }
+  .cno{
+    width: 5cm;
+  }
+
+.oneline{
+  display: flex;
+  justify-content: center;
   
+  
+  
+}
+
+
+.space{
+  width: 20cm;
+}
+.bdy{
+  background-image: radial-gradient(rgb(197, 193, 175),white,rgb(216, 210, 189));
+  background-size: cover;
+  min-height: 16cm;
+}
+
+.nf{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  min-height: 6cm;
+  position: absolute;
+  bottom: 3cm;
+  left: 0;
+  right: 0;
+  opacity: 60%;
+}
+
+
+.container{
+  min-height: 16cm;
+  
+}
+
+.top{
+  height: 1.5cm;
+}

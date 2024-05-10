@@ -1,0 +1,46 @@
+
+<app-lowernav></app-lowernav>
+
+<div class="bdy">
+  <div class="container">
+    <div class="top"></div>
+    <div class="oneline">
+      <div class="total">
+        <h4 class="fw-bold text-dark"><span class="badge text-bg-dark">Total Cases : <strong>{{clists.length}}</strong></span></h4>
+      </div>
+      <div class="space"></div>
+      <div class="search-container">
+        <input class="form-control search-input" type="text" placeholder="Search by Cases" [(ngModel)]="searchText">
+      </div>
+    </div>
+  
+  
+    @if(clists.length!=0){
+    <h2><div class="headinglist"><b class="cno">CASE NO</b><b> ASSIGNED DATE</b><b>COMPLETED</b></div></h2>
+    <!-- @for (clist of clists; track $index) { -->
+      
+      <div class="list-group" *ngFor="let clist of clists | search: searchText">
+        <button  class="list-group-item list-group-item-action" (click)="singleCase(clist.key!)">
+          <b class="d-flex align-items-center cno">{{clist.Case_no}}
+            @if(clist.flag == "NOTSEEN"){
+          <div class="new">&nbsp;&nbsp;  ( new )</div>
+            }
+        </b>
+        <b class="cno">{{clist.date}}</b> 
+        <b class="ml-3">{{clist.comp}}</b>
+        </button>
+
+      </div>
+    }
+    @else {
+      <div class="flex-column nf">
+        <img src="../../assets/images/nonew.png" alt="nothing" style="height: 2cm;  ">
+      <h5 class="pt-4">No cases found!!</h5>
+      </div>
+    }
+
+  </div>
+
+
+
+<app-footer></app-footer>
