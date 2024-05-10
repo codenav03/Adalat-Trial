@@ -1,0 +1,26 @@
+.logo{
+    height: 1.5cm;
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+  .nav-item{
+    display: flex;
+    align-content: space-between;
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+  
+  .activeLink{
+    color: rgb(236, 187, 61);
+    
+  }
+  
+  
+  .bg-very-dark {
+    background-color: #000; 
+  }
+  
+  .nav-link{
+   
+    font-weight: bold;
+  }

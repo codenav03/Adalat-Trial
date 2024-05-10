@@ -1,0 +1,27 @@
+.logo{
+    height: 1.5cm;
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+  .nav-item{
+    display: flex;
+    align-content: space-between;
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+  .bg-very-dark {
+    background-color: #000; /* Black color */
+}
+.hwr:hover{
+  color: #d1c18c;
+}
+.nav-link{
+ 
+  font-weight: bold;
+}
+
+
+.activeLink{
+  color: rgb(236, 187, 61);
+  
+}

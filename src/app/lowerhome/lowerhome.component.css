@@ -1,0 +1,62 @@
+
+  
+  .crd{
+    background-color: #6d6859d2;
+    color: white;
+  }
+  .but{
+    background-color: rgb(11, 11, 11);
+    color: white;
+  }
+
+  .but:hover{
+    background-color: rgb(216, 206, 193);
+    color: black;
+  }
+  
+  .contain{
+    display: flex;
+    justify-content: center;
+    background-image: radial-gradient(rgb(197, 193, 175),white,rgb(216, 210, 189));
+    min-height: 17cm;
+  }
+
+  .newlist{
+    min-width: 15cm;
+    min-height: 9cm;
+    
+  }
+
+  h2 {
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    margin-bottom: 20px; /* Adjust as needed for spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+h3{
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 0;
+  margin-bottom: 20px; /* Adjust as needed for spacing */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+  .bottom-item {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .gap{
+    height: 3cm;
+  }

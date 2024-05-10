@@ -1,0 +1,33 @@
+
+
+<app-lowernav></app-lowernav>
+
+<div class="mainbody">
+  <div class="container">
+    @if(clists.length!=0){
+    <h2><div class="listhead"><b>CASE NO</b><div class="space"></div><b>CASE TITLE</b></div></h2>
+    <div class="list-group">
+      <button *ngFor="let clist of clists" class="list-group-item list-group-item-action" (click)="singleCase(clist.key!)">
+        
+        <div class="eachlist"> 
+          <b class="d-flex align-items-center cno">{{ clist.Case_no }}</b>
+          <div class="space1"></div>
+          <b>{{ clist.title }}</b>
+        </div>
+      </button>
+    </div>
+  }
+  @else {
+    <div class="flex-column nf">
+      <img src="../../assets/images/nonew.png" alt="nothing" style="height: 2cm;  ">
+    <h5 class="pt-4">No pending cases found!!</h5>
+    </div>
+  }
+  </div>
+</div>
+
+
+
+<app-footer></app-footer>
+
+

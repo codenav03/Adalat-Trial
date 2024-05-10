@@ -1,25 +1,27 @@
-<div class="container">
-  <ul class="list-group">
-      <li class="list-group-item"><h3>Case No</h3></li>
-      <li class="list-group-item">32'4'23/wd
-          <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Assign Court</button>
+<app-navbar></app-navbar>
 
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasRightLabel">Available Temporary Courts</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="list-group">
-                  <li class="list-group-item">Tvm Sub Magistrate Court
-                      <button class="btn" type="button" >Assign</button>
-
-                  </li>
-
-                </ul>
-            </div>
-          </div>
-      </li>
+<div class="mainbody">
+  @if(casesWithAssignedNo.length!=0){
+  <div class="container" *ngIf="casesWithAssignedNo.length > 0">
+    
+    <ul class="list-group" *ngFor="let case of casesWithAssignedNo">
+     
+        <li class="list-group-item">{{case.Case_no}}
+            <button class="btn" type="button" (click)="assignCourt(case.key!)">Assign Court</button>
+  
+            
+        </li>
     </ul>
+  </div>
+    }
+  @else {
+    <div class="flex-column nf">
+      <img src="../../assets/images/nonew.png" alt="nothing" style="height: 2cm;  ">
+    <h5 class="pt-4">No pending cases found!!</h5>
+    </div>
+  }
+
 </div>
 
+
+<app-footer></app-footer>
