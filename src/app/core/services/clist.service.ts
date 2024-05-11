@@ -42,7 +42,6 @@ updateCase(key: string, expense: Icasel){
 assgCourt(key: string,lcourtId: string,date: string){
   this.caseRef.update(key,{ assign: 'YES' ,lcourtId: lcourtId,date: date,flag:"NOTSEEN"});
 }
-//need to add flag notseen
 
 seenCase(key: string){
   this.caseRef.update(key,{flag: "SEEN"});

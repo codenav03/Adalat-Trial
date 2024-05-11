@@ -28,10 +28,6 @@ export class FileService {
   }
 
 
- /* downloadFile(url: string): Promise<any> {
-    return this.storage.storage.refFromURL(url).getDownloadURL();
-  }*/
-
   downloadFile(filePath: string): Promise<string> {
     const fileRef = this.storage.ref(filePath);
     return fileRef.getDownloadURL().toPromise();
